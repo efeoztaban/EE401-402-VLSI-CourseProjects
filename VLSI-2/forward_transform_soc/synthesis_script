@@ -1,0 +1,78 @@
+
+
+# synthesis script
+
+
+
+sh date
+
+
+
+analyze -format verilog forward_transform_soc.v
+elaborate forward_transform_soc
+
+
+analyze -format verilog accelerator_controller.v
+
+analyze -format verilog accelerator_datapath.v
+
+analyze -format verilog accelerator_shell.v
+
+analyze -format verilog accelerator_top.v
+
+analyze -format verilog ahb_decoder.v
+
+analyze -format verilog ahb_default_slave.v
+
+analyze -format verilog ahb_mux_s2m.v
+
+analyze -format verilog image_sensor_interface.v
+
+analyze -format verilog registerFile64_9.v
+
+analyze -format verilog sdram_controller.v
+
+analyze -format verilog sram_controller.v
+
+
+
+
+set clock clk
+
+create_clock -period 5 -name $clock
+
+set_clock_uncertainty 0.2 $clock
+
+
+
+set_input_delay 0 -clock $clock [all_inputs]
+
+set_output_delay 0 -clock $clock [all_outputs]
+
+
+
+set_max_area 0
+
+
+
+compile -map_effort high -scan
+
+
+
+redirect area_report { report_area }
+
+redirect timing_report { report_timing -max_paths 5 }
+
+
+
+write -format verilog -hier -output forward_transform_soc.vnetlist
+
+
+
+sh date
+
+
+
+quit
+
+

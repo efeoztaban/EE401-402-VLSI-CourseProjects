@@ -1,0 +1,762 @@
+
+                      Design Compiler Graphical
+                            DC Ultra (TM)
+                             DFTMAX (TM)
+                         Power Compiler (TM)
+                           DesignWare (R)
+                           DC Expert (TM)
+                         Design Vision (TM)
+                          HDL Compiler (TM)
+                         VHDL Compiler (TM)
+                            DFT Compiler
+                        Library Compiler (TM)
+                         Design Compiler(R)
+
+          Version H-2013.03-SP4 for RHEL32 -- Sep 01, 2013
+               Copyright (c) 1988-2013 Synopsys, Inc.
+
+This software and the associated documentation are confidential and 
+proprietary to Synopsys, Inc. Your use or disclosure of this software 
+is subject to the terms and conditions of a written license agreement 
+between you, or your company, and Synopsys, Inc.
+
+Information: Invoking dc_shell using the 32-bit executable is not
+             recommended. It will be obsolete in a future release.
+             Please invoke dc_shell using the -64bit option.
+
+Initializing...
+# synthesis script
+sh date
+Thu Jun 23 13:58:26 +03 2022
+analyze -format verilog forward_transform_soc.v
+Running PRESTO HDLC
+Searching for ./forward_transform_soc.v
+Compiling source file ./forward_transform_soc.v
+Presto compilation completed successfully.
+Loading db file '/home/efeoztaban/forward_transform_soc/saed90nm_max.db'
+Loading db file '/usr/local/synopsys/H-2013.03-SP4/libraries/syn/dw_foundation.sldb'
+1
+elaborate forward_transform_soc
+Loading db file '/usr/local/synopsys/H-2013.03-SP4/libraries/syn/gtech.db'
+Loading db file '/usr/local/synopsys/H-2013.03-SP4/libraries/syn/standard.sldb'
+  Loading link library 'saed90nm_max'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'forward_transform_soc'.
+Information: Building the design 'accelerator_shell'. (HDL-193)
+
+Statistics for case statements in always block at line 107 in file
+	'./accelerator_shell.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           117            |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine accelerator_shell line 63 in file
+		'./accelerator_shell.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   Control_Reg_reg   | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine accelerator_shell line 86 in file
+		'./accelerator_shell.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   out_HRDATA_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|   out_HREADY_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine accelerator_shell line 107 in file
+		'./accelerator_shell.v'.
+=================================================================================
+|     Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+=================================================================================
+|       state_reg       | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+| address_generator_reg | Flip-flop |  15   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    out_WE_SRAM_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     sram_data_reg     | Flip-flop |  15   |  Y  | N  | N  | N  | N  | N  | N  |
+|   done_writing_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+=================================================================================
+Presto compilation completed successfully.
+Information: Building the design 'ahb_decoder'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'ahb_mux_s2m'. (HDL-193)
+
+Inferred memory devices in process
+	in routine ahb_mux_s2m line 51 in file
+		'./ahb_mux_s2m.v'.
+===========================================================================================
+|          Register Name          |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===========================================================================================
+|     registered_SEL_SRAM_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+| registered_SEL_Accelerator_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+| registered_SEL_DefaultSlave_reg | Flip-flop |   1   |  N  | N  | N  | Y  | N  | N  | N  |
+|    registered_SEL_SDRAM_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===========================================================================================
+Presto compilation completed successfully.
+Information: Building the design 'ahb_default_slave'. (HDL-193)
+
+Inferred memory devices in process
+	in routine ahb_default_slave line 33 in file
+		'./ahb_default_slave.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   iHREADYOut_reg    | Flip-flop |   1   |  N  | N  | N  | Y  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'sram_controller'. (HDL-193)
+
+Inferred memory devices in process
+	in routine sram_controller line 42 in file
+		'./sram_controller.v'.
+=================================================================================
+|     Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+=================================================================================
+| registered_HWRITE_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+| registered_HADDR_reg  | Flip-flop |  15   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  registered_HSEL_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+=================================================================================
+Presto compilation completed successfully.
+Information: Building the design 'sdram_controller'. (HDL-193)
+
+Statistics for case statements in always block at line 104 in file
+	'./sdram_controller.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           106            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine sdram_controller line 53 in file
+		'./sdram_controller.v'.
+======================================================================================
+|       Register Name        |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+======================================================================================
+| row_addr_change_status_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|       bank_addr_reg        | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+|        col_addr_reg        | Flip-flop |  14   |  Y  | N  | Y  | N  | N  | N  | N  |
+|        row_addr_reg        | Flip-flop |  14   |  Y  | N  | Y  | N  | N  | N  | N  |
+======================================================================================
+
+Inferred memory devices in process
+	in routine sdram_controller line 89 in file
+		'./sdram_controller.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  current_state_reg  | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine sdram_controller line 104 in file
+		'./sdram_controller.v'.
+===========================================================================
+|    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
+===========================================================================
+|    out_addr_reg     | Latch |  14   |  Y  | N  | N  | N  | -  | -  | -  |
+|  out_bank_addr_reg  | Latch |   2   |  Y  | N  | N  | N  | -  | -  | -  |
+|     out_RAS_reg     | Latch |   1   |  N  | N  | N  | N  | -  | -  | -  |
+|   next_state_reg    | Latch |   3   |  Y  | N  | N  | N  | -  | -  | -  |
+|     out_CAS_reg     | Latch |   1   |  N  | N  | N  | N  | -  | -  | -  |
+|   out_HREADY_reg    | Latch |   1   |  N  | N  | N  | N  | -  | -  | -  |
+|     out_CS_reg      | Latch |   1   |  N  | N  | N  | N  | -  | -  | -  |
+|     out_WE_reg      | Latch |   1   |  N  | N  | N  | N  | -  | -  | -  |
+===========================================================================
+Presto compilation completed successfully.
+Information: Building the design 'accelerator_top'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'image_sensor_interface'. (HDL-193)
+
+Inferred memory devices in process
+	in routine image_sensor_interface line 29 in file
+		'./image_sensor_interface.v'.
+=================================================================================
+|     Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+=================================================================================
+|   start_writing_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+| out_frame_capture_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+=================================================================================
+
+Inferred memory devices in process
+	in routine image_sensor_interface line 48 in file
+		'./image_sensor_interface.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    out_done_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|  out_write_en_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+| writing_to_reg_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine image_sensor_interface line 75 in file
+		'./image_sensor_interface.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     counter_reg     | Flip-flop |   6   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'registerFile64_9'. (HDL-193)
+
+Inferred memory devices in process
+	in routine registerFile64_9 line 15 in file
+		'./registerFile64_9.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     RegFile_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|     RegFile_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|     RegFile_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|     RegFile_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|     RegFile_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|     RegFile_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|     RegFile_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|     RegFile_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|     RegFile_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|     RegFile_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|     RegFile_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|     RegFile_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|     RegFile_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|     RegFile_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|     RegFile_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|     RegFile_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|     RegFile_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|     RegFile_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|     RegFile_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|     RegFile_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|     RegFile_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|     RegFile_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|     RegFile_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|     RegFile_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|     RegFile_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|     RegFile_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|     RegFile_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|     RegFile_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|     RegFile_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|     RegFile_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|     RegFile_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|     RegFile_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|     RegFile_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|     RegFile_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|     RegFile_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|     RegFile_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|     RegFile_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|     RegFile_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|     RegFile_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|     RegFile_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|     RegFile_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|     RegFile_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|     RegFile_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|     RegFile_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|     RegFile_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|     RegFile_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|     RegFile_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|     RegFile_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|     RegFile_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|     RegFile_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|     RegFile_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|     RegFile_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|     RegFile_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|     RegFile_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|     RegFile_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|     RegFile_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|     RegFile_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|     RegFile_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|     RegFile_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|     RegFile_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|     RegFile_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|     RegFile_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|     RegFile_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|     RegFile_reg     | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+==============================================================
+|  block name/line    | Inputs | Outputs | # sel inputs | MB |
+==============================================================
+| registerFile64_9/21 |   64   |    9    |      6       | N  |
+| registerFile64_9/22 |   64   |    9    |      6       | N  |
+==============================================================
+Presto compilation completed successfully.
+Information: Building the design 'accelerator_datapath'. (HDL-193)
+
+Statistics for case statements in always block at line 80 in file
+	'./accelerator_datapath.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            82            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 398 in file
+	'./accelerator_datapath.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           438            |     no/auto      |
+===============================================
+Warning:  ./accelerator_datapath.v:42: X and/or Z bits occur in an actual parameter to the 'accelerator_datapath' design template. (ELAB-388)
+
+Inferred memory devices in process
+	in routine accelerator_datapath line 66 in file
+		'./accelerator_datapath.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  current_state_reg  | Flip-flop |   6   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine accelerator_datapath line 398 in file
+		'./accelerator_datapath.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       M31_reg       | Flip-flop |  15   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       M32_reg       | Flip-flop |  15   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       M33_reg       | Flip-flop |  15   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   Regout_done_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   Regout_T00_reg    | Flip-flop |  15   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   Regout_T01_reg    | Flip-flop |  15   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   Regout_T02_reg    | Flip-flop |  15   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   Regout_T03_reg    | Flip-flop |  15   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   Regout_T10_reg    | Flip-flop |  15   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   Regout_T11_reg    | Flip-flop |  15   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   Regout_T12_reg    | Flip-flop |  15   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   Regout_T13_reg    | Flip-flop |  15   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   Regout_T20_reg    | Flip-flop |  15   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   Regout_T21_reg    | Flip-flop |  15   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   Regout_T22_reg    | Flip-flop |  15   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   Regout_T23_reg    | Flip-flop |  15   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   Regout_T30_reg    | Flip-flop |  15   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   Regout_T31_reg    | Flip-flop |  15   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   Regout_T32_reg    | Flip-flop |  15   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   Regout_T33_reg    | Flip-flop |  15   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       M00_reg       | Flip-flop |  15   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       M01_reg       | Flip-flop |  15   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       M02_reg       | Flip-flop |  15   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       M03_reg       | Flip-flop |  15   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       M10_reg       | Flip-flop |  15   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       M11_reg       | Flip-flop |  15   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       M12_reg       | Flip-flop |  15   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       M13_reg       | Flip-flop |  15   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       M20_reg       | Flip-flop |  15   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       M21_reg       | Flip-flop |  15   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       M22_reg       | Flip-flop |  15   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       M23_reg       | Flip-flop |  15   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       M30_reg       | Flip-flop |  15   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'accelerator_controller'. (HDL-193)
+
+Statistics for case statements in always block at line 47 in file
+	'./accelerator_controller.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            76            |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine accelerator_controller line 47 in file
+		'./accelerator_controller.v'.
+==================================================================================
+|     Register Name      |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+==================================================================================
+|      out_X20_reg       | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|      out_X21_reg       | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|      out_X22_reg       | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|      out_X32_reg       | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|      out_X31_reg       | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|      out_X30_reg       | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|      out_X23_reg       | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|      out_X33_reg       | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|     read_data_reg      | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+| out_datapath_start_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+| out_data_available_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|      out_T00_reg       | Flip-flop |  15   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      out_T01_reg       | Flip-flop |  15   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      out_T02_reg       | Flip-flop |  15   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      out_T03_reg       | Flip-flop |  15   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      out_T10_reg       | Flip-flop |  15   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      out_T11_reg       | Flip-flop |  15   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      out_T12_reg       | Flip-flop |   6   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      out_T12_reg       | Flip-flop |   9   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      out_T13_reg       | Flip-flop |  15   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      out_T20_reg       | Flip-flop |  15   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      out_T21_reg       | Flip-flop |  15   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      out_T22_reg       | Flip-flop |  15   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      out_T23_reg       | Flip-flop |  15   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      out_T30_reg       | Flip-flop |  15   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      out_T31_reg       | Flip-flop |  12   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      out_T31_reg       | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      out_T32_reg       | Flip-flop |  15   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      out_T33_reg       | Flip-flop |  15   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      out_done_reg      | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|      finished_reg      | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|       state_reg        | Flip-flop |   6   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      out_X00_reg       | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|      out_X01_reg       | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|      out_X02_reg       | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|      out_X03_reg       | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|      out_X10_reg       | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|      out_X11_reg       | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|      out_X12_reg       | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+|      out_X13_reg       | Flip-flop |   9   |  Y  | N  | N  | N  | N  | N  | N  |
+==================================================================================
+
+Inferred memory devices in process
+	in routine accelerator_controller line 214 in file
+		'./accelerator_controller.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  addr_counter_reg   | Flip-flop |   6   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+1
+analyze -format verilog accelerator_controller.v
+Running PRESTO HDLC
+Searching for ./accelerator_controller.v
+Compiling source file ./accelerator_controller.v
+Presto compilation completed successfully.
+1
+analyze -format verilog accelerator_datapath.v
+Running PRESTO HDLC
+Searching for ./accelerator_datapath.v
+Compiling source file ./accelerator_datapath.v
+Presto compilation completed successfully.
+1
+analyze -format verilog accelerator_shell.v
+Running PRESTO HDLC
+Searching for ./accelerator_shell.v
+Compiling source file ./accelerator_shell.v
+Presto compilation completed successfully.
+1
+analyze -format verilog accelerator_top.v
+Running PRESTO HDLC
+Searching for ./accelerator_top.v
+Compiling source file ./accelerator_top.v
+Presto compilation completed successfully.
+1
+analyze -format verilog ahb_decoder.v
+Running PRESTO HDLC
+Searching for ./ahb_decoder.v
+Compiling source file ./ahb_decoder.v
+Presto compilation completed successfully.
+1
+analyze -format verilog ahb_default_slave.v
+Running PRESTO HDLC
+Searching for ./ahb_default_slave.v
+Compiling source file ./ahb_default_slave.v
+Presto compilation completed successfully.
+1
+analyze -format verilog ahb_mux_s2m.v
+Running PRESTO HDLC
+Searching for ./ahb_mux_s2m.v
+Compiling source file ./ahb_mux_s2m.v
+Presto compilation completed successfully.
+1
+analyze -format verilog image_sensor_interface.v
+Running PRESTO HDLC
+Searching for ./image_sensor_interface.v
+Compiling source file ./image_sensor_interface.v
+Presto compilation completed successfully.
+1
+analyze -format verilog registerFile64_9.v
+Running PRESTO HDLC
+Searching for ./registerFile64_9.v
+Compiling source file ./registerFile64_9.v
+Presto compilation completed successfully.
+1
+analyze -format verilog sdram_controller.v
+Running PRESTO HDLC
+Searching for ./sdram_controller.v
+Compiling source file ./sdram_controller.v
+Presto compilation completed successfully.
+1
+analyze -format verilog sram_controller.v
+Running PRESTO HDLC
+Searching for ./sram_controller.v
+Compiling source file ./sram_controller.v
+Presto compilation completed successfully.
+1
+set clock clk
+clk
+create_clock -period 5 -name $clock
+Warning: Creating virtual clock named 'clk' with no sources. (UID-348)
+1
+set_clock_uncertainty 0.2 $clock
+1
+set_input_delay 0 -clock $clock [all_inputs]
+1
+set_output_delay 0 -clock $clock [all_outputs]
+1
+set_max_area 0
+1
+compile -map_effort high -scan
+Information: Choosing a test methodology will restrict the optimization of sequential cells. (UIO-12)
+Information: Checking out the license 'DesignWare'. (SEC-104)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | H-2013.03-DWBB_201303.4 |     *     |
+| Licensed DW Building Blocks        | H-2013.03-DWBB_201303.4 |     *     |
+============================================================================
+
+
+Information: There are 359 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'sdram_controller'
+Information: Added key list 'DesignWare' to design 'sdram_controller'. (DDB-72)
+Information: The register 'out_HREADY_reg' is a constant and will be removed. (OPT-1206)
+  Processing 'sram_controller'
+  Processing 'ahb_default_slave'
+  Processing 'ahb_mux_s2m'
+  Processing 'ahb_decoder'
+  Processing 'accelerator_controller'
+Information: The register 'state_reg[5]' is a constant and will be removed. (OPT-1206)
+  Processing 'accelerator_datapath'
+  Processing 'registerFile64_9'
+  Processing 'image_sensor_interface'
+  Processing 'accelerator_top'
+  Processing 'accelerator_shell'
+Information: The register 'out_HRDATA_reg[31]' is a constant and will be removed. (OPT-1206)
+Information: The register 'out_HRDATA_reg[30]' is a constant and will be removed. (OPT-1206)
+Information: The register 'out_HRDATA_reg[29]' is a constant and will be removed. (OPT-1206)
+Information: The register 'out_HRDATA_reg[28]' is a constant and will be removed. (OPT-1206)
+Information: The register 'out_HRDATA_reg[27]' is a constant and will be removed. (OPT-1206)
+Information: The register 'out_HRDATA_reg[26]' is a constant and will be removed. (OPT-1206)
+Information: The register 'out_HRDATA_reg[25]' is a constant and will be removed. (OPT-1206)
+Information: The register 'out_HRDATA_reg[24]' is a constant and will be removed. (OPT-1206)
+Information: The register 'out_HRDATA_reg[23]' is a constant and will be removed. (OPT-1206)
+Information: The register 'out_HRDATA_reg[22]' is a constant and will be removed. (OPT-1206)
+Information: The register 'out_HRDATA_reg[21]' is a constant and will be removed. (OPT-1206)
+Information: The register 'out_HRDATA_reg[20]' is a constant and will be removed. (OPT-1206)
+Information: The register 'out_HRDATA_reg[19]' is a constant and will be removed. (OPT-1206)
+Information: The register 'out_HRDATA_reg[18]' is a constant and will be removed. (OPT-1206)
+Information: The register 'out_HRDATA_reg[17]' is a constant and will be removed. (OPT-1206)
+Information: The register 'out_HRDATA_reg[16]' is a constant and will be removed. (OPT-1206)
+Information: The register 'out_HRDATA_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'out_HRDATA_reg[14]' is a constant and will be removed. (OPT-1206)
+Information: The register 'out_HRDATA_reg[13]' is a constant and will be removed. (OPT-1206)
+Information: The register 'out_HRDATA_reg[12]' is a constant and will be removed. (OPT-1206)
+Information: The register 'out_HRDATA_reg[11]' is a constant and will be removed. (OPT-1206)
+Information: The register 'out_HRDATA_reg[10]' is a constant and will be removed. (OPT-1206)
+Information: The register 'out_HRDATA_reg[9]' is a constant and will be removed. (OPT-1206)
+  Processing 'forward_transform_soc'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Implementation Selection
+  ----------------------------------
+  Processing 'accelerator_shell_DW01_inc_0'
+  Processing 'accelerator_controller_DW01_inc_0'
+  Processing 'accelerator_datapath_DW01_sub_0'
+  Processing 'accelerator_datapath_DW01_sub_1'
+  Processing 'accelerator_datapath_DW01_sub_2'
+  Processing 'accelerator_datapath_DW01_sub_3'
+  Processing 'accelerator_datapath_DW01_sub_4'
+  Processing 'accelerator_datapath_DW01_sub_5'
+  Processing 'accelerator_datapath_DW01_sub_6'
+  Processing 'accelerator_datapath_DW01_sub_7'
+  Processing 'accelerator_datapath_DW01_sub_8'
+  Processing 'accelerator_datapath_DW01_sub_9'
+  Processing 'accelerator_datapath_DW01_sub_10'
+  Processing 'accelerator_datapath_DW01_sub_11'
+  Processing 'accelerator_datapath_DW01_sub_12'
+  Processing 'accelerator_datapath_DW01_sub_13'
+  Processing 'accelerator_datapath_DW01_sub_14'
+  Processing 'accelerator_datapath_DW01_sub_15'
+  Processing 'accelerator_datapath_DW01_sub_16'
+  Processing 'accelerator_datapath_DW01_sub_17'
+  Processing 'accelerator_datapath_DW01_sub_18'
+  Processing 'accelerator_datapath_DW01_sub_19'
+  Processing 'accelerator_datapath_DW01_sub_20'
+  Processing 'accelerator_datapath_DW01_sub_21'
+  Processing 'accelerator_datapath_DW01_sub_22'
+  Processing 'accelerator_datapath_DW01_sub_23'
+  Processing 'accelerator_datapath_DW01_sub_24'
+  Processing 'accelerator_datapath_DW01_sub_25'
+  Processing 'accelerator_datapath_DW01_sub_26'
+  Processing 'accelerator_datapath_DW01_sub_27'
+  Processing 'accelerator_datapath_DW01_sub_28'
+  Processing 'accelerator_datapath_DW01_sub_29'
+  Processing 'accelerator_datapath_DW01_sub_30'
+  Processing 'accelerator_datapath_DW01_sub_31'
+  Processing 'accelerator_datapath_DW01_sub_32'
+  Processing 'accelerator_datapath_DW01_sub_33'
+  Processing 'accelerator_datapath_DW01_sub_34'
+  Processing 'accelerator_datapath_DW01_sub_35'
+  Processing 'accelerator_datapath_DW01_sub_36'
+  Processing 'accelerator_datapath_DW01_sub_37'
+  Processing 'accelerator_datapath_DW01_sub_38'
+  Processing 'accelerator_datapath_DW01_sub_39'
+  Processing 'image_sensor_interface_DW01_inc_0'
+  Building model 'DW01_NAND2'
+  Processing 'DW01_NAND2'
+  Building model 'DW01_add_width15' (rpl)
+  Processing 'DW01_add_width15'
+  Processing 'accelerator_datapath_DW01_add_0'
+  Processing 'accelerator_datapath_DW01_add_1'
+  Processing 'accelerator_datapath_DW01_add_2'
+Warning: No scan equivalent exists for cell sdram_controller/next_state_reg[0] (LATCHX2). (TEST-120)
+Information: There are 22 other cells with the same violation. (TEST-171)
+
+  Beginning Mapping Optimizations  (High effort)
+  -------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:33  239591.7      0.00       0.0       0.3                          
+    0:00:33  239591.7      0.00       0.0       0.3                          
+    0:00:33  239591.7      0.00       0.0       0.3                          
+    0:00:33  239591.7      0.00       0.0       0.3                          
+    0:00:34  239591.7      0.00       0.0       0.3                          
+    0:00:43  128359.3      0.00       0.0       0.3                          
+    0:00:44  127421.3      0.00       0.0       9.8                          
+    0:00:46  127421.3      0.00       0.0       9.8                          
+    0:00:46  127421.3      0.00       0.0       9.8                          
+    0:00:47  127421.3      0.00       0.0       9.8                          
+    0:00:47  127421.3      0.00       0.0       9.8                          
+    0:00:47  127439.4      0.00       0.0       2.7                          
+    0:00:47  127563.8      0.00       0.0       1.5                          
+    0:00:47  127455.9      0.00       0.0       0.3                          
+    0:00:47  127455.9      0.00       0.0       0.3                          
+    0:00:47  127455.9      0.00       0.0       0.3                          
+    0:00:47  127455.9      0.00       0.0       0.3                          
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:47  127455.9      0.00       0.0       0.3                          
+    0:00:47  127455.9      0.00       0.0       0.3                          
+    0:00:47  127455.9      0.00       0.0       0.3                          
+
+
+  Beginning Design Rule Fixing  (max_transition)
+  ----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:47  127455.9      0.00       0.0       0.3                          
+    0:00:48  127469.1      0.00       0.0       0.0                          
+
+
+  Beginning Area-Recovery Phase  (max_area 0)
+  -----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:48  127469.1      0.00       0.0       0.0                          
+    0:00:48  127469.1      0.00       0.0       0.0                          
+    0:00:50  125045.0      0.00       0.0       0.0                          
+    0:00:55  124037.6      0.00       0.0       0.0                          
+    0:00:55  123338.9      0.00       0.0       0.0                          
+    0:00:55  123254.6      0.00       0.0       0.0                          
+    0:00:56  123243.2      0.00       0.0       0.0                          
+    0:00:56  123231.9      0.00       0.0       0.0                          
+    0:00:56  123220.6      0.00       0.0       0.0                          
+    0:00:56  123209.3      0.00       0.0       0.0                          
+    0:00:56  123198.1      0.00       0.0       0.0                          
+    0:00:56  123186.8      0.00       0.0       0.0                          
+    0:00:56  123175.8      0.00       0.0       0.0                          
+    0:00:56  123164.7      0.00       0.0       0.0                          
+    0:00:56  123153.3      0.00       0.0       0.0                          
+    0:00:56  123142.0      0.00       0.0       0.0                          
+    0:00:56  123131.1      0.00       0.0       0.0                          
+    0:00:56  123120.7      0.00       0.0       0.0                          
+    0:00:56  123120.7      0.00       0.0       0.0                          
+    0:00:57  123120.7      0.00       0.0       0.0                          
+    0:00:57  123093.3      0.00       0.0       0.0                          
+    0:00:57  123093.3      0.00       0.0       0.0                          
+    0:00:57  123093.3      0.00       0.0       0.0                          
+    0:00:57  123093.3      0.00       0.0       0.0                          
+    0:00:57  123093.3      0.00       0.0       0.0                          
+    0:00:57  123093.3      0.00       0.0       0.0                          
+    0:01:01  122232.5      0.00       0.0       0.0                          
+    0:01:04  121570.7      0.00       0.0       0.0                          
+    0:01:05  121058.0      0.00       0.0       0.0                          
+    0:01:07  120409.8      0.00       0.0       0.0                          
+    0:01:08  119786.1      0.00       0.0       0.0                          
+    0:01:09  119360.4      0.00       0.0       0.0                          
+    0:01:12  119127.2      0.00       0.0       0.0                          
+    0:01:14  119126.5      0.00       0.0       0.0                          
+    0:01:14  119126.5      0.00       0.0       0.0                          
+    0:01:14  119126.5      0.00       0.0       0.0                          
+    0:01:14  119126.5      0.00       0.0       0.0                          
+    0:01:14  119126.5      0.00       0.0       0.0                          
+    0:01:14  119126.5      0.00       0.0       0.0                          
+    0:01:15  118922.5      0.00       0.0       0.0                          
+    0:01:19  118791.6      0.00       0.0       0.0                          
+    0:01:20  118631.5      0.00       0.0       0.0                          
+    0:01:22  118495.7      0.00       0.0       0.0                          
+    0:01:23  118387.9      0.00       0.0       0.0                          
+    0:01:24  118317.5      0.00       0.0       0.0                          
+    0:01:25  118240.5      0.00       0.0       0.0                          
+    0:01:26  118196.0      0.00       0.0       0.0                          
+    0:01:26  118144.0      0.00       0.0       0.0                          
+    0:01:27  118083.7      0.00       0.0       0.0                          
+    0:01:27  118026.1      0.00       0.0       0.0                          
+    0:01:28  117994.3      0.00       0.0       0.0                          
+    0:01:28  117971.1      0.00       0.0       0.0                          
+    0:01:28  117947.6      0.00       0.0       0.0                          
+    0:01:29  117920.2      0.00       0.0       0.0                          
+    0:01:29  117904.9      0.00       0.0       0.0                          
+    0:01:29  117885.5      0.00       0.0       0.0                          
+    0:01:29  117885.5      0.00       0.0       0.0                          
+    0:01:29  117885.5      0.00       0.0       0.0                          
+    0:01:29  117849.1      0.00       0.0       0.0                          
+    0:01:30  117849.1      0.00       0.0       0.0                          
+    0:01:30  117849.1      0.00       0.0       0.0                          
+    0:01:30  117849.1      0.00       0.0       0.0                          
+    0:01:30  117849.1      0.00       0.0       0.0                          
+    0:01:30  117849.1      0.00       0.0       0.0                          
+    0:01:30  117849.1      0.00       0.0       0.0                          
+Loading db file '/home/efeoztaban/forward_transform_soc/saed90nm_max.db'
+
+  Optimization Complete
+  ---------------------
+1
+redirect area_report { report_area }
+redirect timing_report { report_timing -max_paths 5 }
+write -format verilog -hier -output forward_transform_soc.vnetlist
+Writing verilog file '/home/efeoztaban/forward_transform_soc/forward_transform_soc.vnetlist'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+Warning: Verilog writer has added 40 nets to module forward_transform_soc using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+1
+sh date
+Thu Jun 23 14:00:02 +03 2022
+quit
+
+Thank you...

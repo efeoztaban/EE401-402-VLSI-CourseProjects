@@ -1,0 +1,31 @@
+ 
+****************************************
+Report : area
+Design : forward_transform_soc
+Version: H-2013.03-SP4
+Date   : Thu Jun 23 14:00:00 2022
+****************************************
+
+Information: Updating design information... (UID-85)
+Library(s) Used:
+
+    saed90nm_max (File: /home/efeoztaban/forward_transform_soc/saed90nm_max.db)
+
+Number of ports:                          292
+Number of nets:                           445
+Number of cells:                            6
+Number of combinational cells:              0
+Number of sequential cells:                 0
+Number of macros/black boxes:               0
+Number of buf/inv:                          0
+Number of references:                       6
+
+Combinational area:              56419.926822
+Buf/Inv area:                     4947.450183
+Noncombinational area:           54709.584394
+Macro/Black Box area:                0.000000
+Net Interconnect area:            6719.624813
+
+Total cell area:                111129.511216
+Total area:                     117849.136029
+1

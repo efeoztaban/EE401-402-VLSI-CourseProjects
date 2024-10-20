@@ -1,0 +1,31 @@
+ 
+****************************************
+Report : area
+Design : accuracy_configurable_adder_32bit
+Version: H-2013.03-SP4
+Date   : Tue Dec 21 19:56:59 2021
+****************************************
+
+Information: Updating design information... (UID-85)
+Library(s) Used:
+
+    saed90nm_max (File: /home/efeoztaban/accuracy_conf_32/saed90nm_max.db)
+
+Number of ports:                           98
+Number of nets:                           329
+Number of cells:                          119
+Number of combinational cells:             15
+Number of sequential cells:                97
+Number of macros/black boxes:               0
+Number of buf/inv:                         15
+Number of references:                       9
+
+Combinational area:               2392.501013
+Buf/Inv area:                      298.620011
+Noncombinational area:            2950.061010
+Macro/Black Box area:                0.000000
+Net Interconnect area:             213.784863
+
+Total cell area:                  5342.562024
+Total area:                       5556.346886
+1

@@ -1,0 +1,205 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 5
+Design : forward_transform_soc
+Version: H-2013.03-SP4
+Date   : Thu Jun 23 14:00:01 2022
+****************************************
+
+Operating Conditions: WORST   Library: saed90nm_max
+Wire Load Model Mode: enclosed
+
+  Startpoint: in_SDRAM_r_DATA[4]
+              (input port clocked by clk)
+  Endpoint: out_HRDATA[4]
+            (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  forward_transform_soc
+                     140000                saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    0.00       0.00 f
+  in_SDRAM_r_DATA[4] (in)                                 0.00       0.00 f
+  sdram_controller/in_read_data[4] (sdram_controller)     0.00       0.00 f
+  sdram_controller/out_HRDATA[4] (sdram_controller)       0.00       0.00 f
+  mux/in_HRDATA_SDRAMController[4] (ahb_mux_s2m)          0.00       0.00 f
+  mux/U14/Q (AO222X1)                                     0.72       0.72 f
+  mux/out_HRDATA[4] (ahb_mux_s2m)                         0.00       0.72 f
+  out_HRDATA[4] (out)                                     0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock clk (rise edge)                                   5.00       5.00
+  clock network delay (ideal)                             0.00       5.00
+  clock uncertainty                                      -0.20       4.80
+  output external delay                                   0.00       4.80
+  data required time                                                 4.80
+  --------------------------------------------------------------------------
+  data required time                                                 4.80
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        4.08
+
+
+  Startpoint: in_SDRAM_r_DATA[3]
+              (input port clocked by clk)
+  Endpoint: out_HRDATA[3]
+            (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  forward_transform_soc
+                     140000                saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    0.00       0.00 f
+  in_SDRAM_r_DATA[3] (in)                                 0.00       0.00 f
+  sdram_controller/in_read_data[3] (sdram_controller)     0.00       0.00 f
+  sdram_controller/out_HRDATA[3] (sdram_controller)       0.00       0.00 f
+  mux/in_HRDATA_SDRAMController[3] (ahb_mux_s2m)          0.00       0.00 f
+  mux/U13/Q (AO222X1)                                     0.72       0.72 f
+  mux/out_HRDATA[3] (ahb_mux_s2m)                         0.00       0.72 f
+  out_HRDATA[3] (out)                                     0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock clk (rise edge)                                   5.00       5.00
+  clock network delay (ideal)                             0.00       5.00
+  clock uncertainty                                      -0.20       4.80
+  output external delay                                   0.00       4.80
+  data required time                                                 4.80
+  --------------------------------------------------------------------------
+  data required time                                                 4.80
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        4.08
+
+
+  Startpoint: in_SDRAM_r_DATA[2]
+              (input port clocked by clk)
+  Endpoint: out_HRDATA[2]
+            (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  forward_transform_soc
+                     140000                saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    0.00       0.00 f
+  in_SDRAM_r_DATA[2] (in)                                 0.00       0.00 f
+  sdram_controller/in_read_data[2] (sdram_controller)     0.00       0.00 f
+  sdram_controller/out_HRDATA[2] (sdram_controller)       0.00       0.00 f
+  mux/in_HRDATA_SDRAMController[2] (ahb_mux_s2m)          0.00       0.00 f
+  mux/U12/Q (AO222X1)                                     0.72       0.72 f
+  mux/out_HRDATA[2] (ahb_mux_s2m)                         0.00       0.72 f
+  out_HRDATA[2] (out)                                     0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock clk (rise edge)                                   5.00       5.00
+  clock network delay (ideal)                             0.00       5.00
+  clock uncertainty                                      -0.20       4.80
+  output external delay                                   0.00       4.80
+  data required time                                                 4.80
+  --------------------------------------------------------------------------
+  data required time                                                 4.80
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        4.08
+
+
+  Startpoint: in_SDRAM_r_DATA[1]
+              (input port clocked by clk)
+  Endpoint: out_HRDATA[1]
+            (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  forward_transform_soc
+                     140000                saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    0.00       0.00 f
+  in_SDRAM_r_DATA[1] (in)                                 0.00       0.00 f
+  sdram_controller/in_read_data[1] (sdram_controller)     0.00       0.00 f
+  sdram_controller/out_HRDATA[1] (sdram_controller)       0.00       0.00 f
+  mux/in_HRDATA_SDRAMController[1] (ahb_mux_s2m)          0.00       0.00 f
+  mux/U11/Q (AO222X1)                                     0.72       0.72 f
+  mux/out_HRDATA[1] (ahb_mux_s2m)                         0.00       0.72 f
+  out_HRDATA[1] (out)                                     0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock clk (rise edge)                                   5.00       5.00
+  clock network delay (ideal)                             0.00       5.00
+  clock uncertainty                                      -0.20       4.80
+  output external delay                                   0.00       4.80
+  data required time                                                 4.80
+  --------------------------------------------------------------------------
+  data required time                                                 4.80
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        4.08
+
+
+  Startpoint: in_SDRAM_r_DATA[0]
+              (input port clocked by clk)
+  Endpoint: out_HRDATA[0]
+            (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  forward_transform_soc
+                     140000                saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    0.00       0.00 f
+  in_SDRAM_r_DATA[0] (in)                                 0.00       0.00 f
+  sdram_controller/in_read_data[0] (sdram_controller)     0.00       0.00 f
+  sdram_controller/out_HRDATA[0] (sdram_controller)       0.00       0.00 f
+  mux/in_HRDATA_SDRAMController[0] (ahb_mux_s2m)          0.00       0.00 f
+  mux/U10/Q (AO222X1)                                     0.72       0.72 f
+  mux/out_HRDATA[0] (ahb_mux_s2m)                         0.00       0.72 f
+  out_HRDATA[0] (out)                                     0.00       0.72 f
+  data arrival time                                                  0.72
+
+  clock clk (rise edge)                                   5.00       5.00
+  clock network delay (ideal)                             0.00       5.00
+  clock uncertainty                                      -0.20       4.80
+  output external delay                                   0.00       4.80
+  data required time                                                 4.80
+  --------------------------------------------------------------------------
+  data required time                                                 4.80
+  data arrival time                                                 -0.72
+  --------------------------------------------------------------------------
+  slack (MET)                                                        4.08
+
+
+1

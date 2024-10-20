@@ -1,0 +1,208 @@
+
+                      Design Compiler Graphical
+                            DC Ultra (TM)
+                             DFTMAX (TM)
+                         Power Compiler (TM)
+                           DesignWare (R)
+                           DC Expert (TM)
+                         Design Vision (TM)
+                          HDL Compiler (TM)
+                         VHDL Compiler (TM)
+                            DFT Compiler
+                        Library Compiler (TM)
+                         Design Compiler(R)
+
+          Version H-2013.03-SP4 for RHEL32 -- Sep 01, 2013
+               Copyright (c) 1988-2013 Synopsys, Inc.
+
+This software and the associated documentation are confidential and 
+proprietary to Synopsys, Inc. Your use or disclosure of this software 
+is subject to the terms and conditions of a written license agreement 
+between you, or your company, and Synopsys, Inc.
+
+Information: Invoking dc_shell using the 32-bit executable is not
+             recommended. It will be obsolete in a future release.
+             Please invoke dc_shell using the -64bit option.
+
+Initializing...
+# synthesis script
+sh date
+Tue Dec 21 19:45:20 +03 2021
+analyze -format verilog accuracy_configurable_adder_16bit.v
+Running PRESTO HDLC
+Searching for ./accuracy_configurable_adder_16bit.v
+Compiling source file ./accuracy_configurable_adder_16bit.v
+Presto compilation completed successfully.
+Loading db file '/home/efeoztaban/accuracy_conf_16/saed90nm_max.db'
+Loading db file '/usr/local/synopsys/H-2013.03-SP4/libraries/syn/dw_foundation.sldb'
+1
+elaborate accuracy_configurable_adder_16bit
+Loading db file '/usr/local/synopsys/H-2013.03-SP4/libraries/syn/gtech.db'
+Loading db file '/usr/local/synopsys/H-2013.03-SP4/libraries/syn/standard.sldb'
+  Loading link library 'saed90nm_max'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+
+Inferred memory devices in process
+	in routine accuracy_configurable_adder_16bit line 38 in file
+		'./accuracy_configurable_adder_16bit.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      Cout_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|      a_reg_reg      | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|      b_reg_reg      | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       Sum_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'accuracy_configurable_adder_16bit'.
+1
+set clock clk
+clk
+create_clock -period 3 $clock
+1
+set_clock_uncertainty 0.2 $clock
+1
+set_max_area 0
+1
+compile -map_effort high -scan
+Information: Choosing a test methodology will restrict the optimization of sequential cells. (UIO-12)
+Information: Checking out the license 'DesignWare'. (SEC-104)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | H-2013.03-DWBB_201303.4 |     *     |
+| Licensed DW Building Blocks        | H-2013.03-DWBB_201303.4 |     *     |
+============================================================================
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'accuracy_configurable_adder_16bit'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Implementation Selection
+  ----------------------------------
+  Processing 'accuracy_configurable_adder_16bit_DW01_add_0'
+  Processing 'accuracy_configurable_adder_16bit_DW01_add_1'
+  Processing 'accuracy_configurable_adder_16bit_DW01_add_2'
+
+  Beginning Mapping Optimizations  (High effort)
+  -------------------------------
+  Mapping Optimization (Phase 1)
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:03    3790.8      0.35       3.4       0.0                          
+    0:00:04    3782.5      0.34       3.4       0.0                          
+    0:00:04    3782.5      0.34       3.4       0.0                          
+    0:00:04    3782.5      0.34       3.4       0.0                          
+    0:00:04    3782.5      0.34       3.4       0.0                          
+    0:00:04    3123.9      0.33       2.7       0.0                          
+    0:00:04    3100.4      0.68       3.0       0.0                          
+    0:00:04    3136.2      0.24       2.4       0.0                          
+    0:00:04    3379.3      0.49       2.2       0.0                          
+    0:00:04    3287.9      0.35       2.2       0.0                          
+    0:00:05    3324.6      0.22       1.8       0.0                          
+    0:00:05    3304.2      0.23       1.7       0.0                          
+    0:00:05    3318.6      0.21       1.6       0.0                          
+    0:00:05    3319.9      0.48       2.0       0.0                          
+    0:00:05    3347.1      0.22       1.6       0.0                          
+    0:00:05    3360.7      0.19       1.2       0.0                          
+    0:00:05    3387.1      0.22       1.4       0.0                          
+    0:00:05    3410.0      0.18       1.0       0.0                          
+    0:00:05    3415.6      0.18       1.0       0.0                          
+    0:00:05    3450.7      0.17       0.9       0.0                          
+    0:00:05    3460.8      0.16       0.8       0.0                          
+    0:00:05    3489.3      0.10       0.5       0.0                          
+    0:00:05    3489.3      0.10       0.5       0.0                          
+    0:00:05    3489.3      0.10       0.5       0.0                          
+    0:00:05    3489.3      0.10       0.5       0.0                          
+    0:00:05    3489.3      0.10       0.5       0.0                          
+    0:00:05    3489.3      0.10       0.5       0.0                          
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:05    3489.3      0.10       0.5       0.0                          
+    0:00:05    3523.5      0.01       0.0       0.0 Sum_reg[13]/D            
+    0:00:06    3519.1      0.00       0.0       0.0                          
+    0:00:06    3519.1      0.00       0.0       0.0                          
+
+
+  Beginning Area-Recovery Phase  (max_area 0)
+  -----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:06    3519.1      0.00       0.0       0.0                          
+    0:00:06    3519.1      0.00       0.0       0.0                          
+    0:00:06    3401.2      0.04       0.1       0.0                          
+    0:00:06    3401.2      0.04       0.1       0.0                          
+    0:00:06    3401.2      0.04       0.1       0.0                          
+    0:00:06    3401.2      0.04       0.1       0.0                          
+    0:00:06    3362.9      0.00       0.0       0.0                          
+    0:00:06    3264.9      0.04       0.2       0.0                          
+    0:00:06    3220.5      0.14       0.3       0.0                          
+    0:00:06    3208.1      0.20       0.4       0.0                          
+    0:00:06    3208.1      0.20       0.4       0.0                          
+    0:00:06    3208.1      0.20       0.4       0.0                          
+    0:00:06    3208.1      0.20       0.4       0.0                          
+    0:00:06    3208.1      0.20       0.4       0.0                          
+    0:00:06    3208.1      0.20       0.4       0.0                          
+    0:00:06    3227.9      0.00       0.0       0.0                          
+    0:00:06    3187.7      0.12       0.2       0.0                          
+    0:00:06    3176.7      0.15       0.5       0.0                          
+    0:00:06    3176.7      0.15       0.5       0.0                          
+    0:00:06    3176.7      0.15       0.5       0.0                          
+    0:00:06    3176.7      0.15       0.5       0.0                          
+    0:00:06    3176.7      0.15       0.5       0.0                          
+    0:00:06    3176.7      0.15       0.5       0.0                          
+    0:00:06    3222.4      0.00       0.0       0.0                          
+    0:00:06    3226.1      0.00       0.0       0.0                          
+    0:00:07    3217.2      0.00       0.0       0.0                          
+    0:00:07    3216.2      0.01       0.0       0.0                          
+    0:00:07    3216.2      0.01       0.0       0.0                          
+    0:00:07    3216.2      0.01       0.0       0.0                          
+    0:00:07    3216.2      0.01       0.0       0.0                          
+    0:00:07    3216.2      0.01       0.0       0.0                          
+    0:00:07    3216.2      0.01       0.0       0.0                          
+    0:00:07    3191.3      0.03       0.1       0.0                          
+    0:00:07    3191.3      0.03       0.1       0.0                          
+    0:00:07    3191.3      0.03       0.1       0.0                          
+    0:00:07    3191.3      0.03       0.1       0.0                          
+    0:00:07    3191.3      0.03       0.1       0.0                          
+    0:00:07    3191.3      0.03       0.1       0.0                          
+    0:00:07    3214.5      0.00       0.0       0.0                          
+Loading db file '/home/efeoztaban/accuracy_conf_16/saed90nm_max.db'
+
+  Optimization Complete
+  ---------------------
+1
+redirect area_report { report_area }
+redirect timing_report { report_timing -max_paths 5 }
+write -format verilog -hier -output accuracy_configurable_adder_16bit.vnetlist
+Writing verilog file '/home/efeoztaban/accuracy_conf_16/accuracy_configurable_adder_16bit.vnetlist'.
+Warning: Verilog writer has added 8 nets to module accuracy_configurable_adder_16bit using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+1
+sh date
+Tue Dec 21 19:45:29 +03 2021
+quit
+
+Thank you...
