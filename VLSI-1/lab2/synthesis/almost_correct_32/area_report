@@ -1,0 +1,31 @@
+ 
+****************************************
+Report : area
+Design : almost_correct_adder_32bit
+Version: H-2013.03-SP4
+Date   : Tue Dec 21 21:15:45 2021
+****************************************
+
+Information: Updating design information... (UID-85)
+Library(s) Used:
+
+    saed90nm_max (File: /home/efeoztaban/almost_correct_32/saed90nm_max.db)
+
+Number of ports:                           98
+Number of nets:                           288
+Number of cells:                          124
+Number of combinational cells:             33
+Number of sequential cells:                66
+Number of macros/black boxes:               0
+Number of buf/inv:                         33
+Number of references:                      27
+
+Combinational area:               5527.844953
+Buf/Inv area:                     1318.802959
+Noncombinational area:            2007.258007
+Macro/Black Box area:                0.000000
+Net Interconnect area:             286.650441
+
+Total cell area:                  7535.102960
+Total area:                       7821.753401
+1

@@ -1,0 +1,246 @@
+
+                      Design Compiler Graphical
+                            DC Ultra (TM)
+                             DFTMAX (TM)
+                         Power Compiler (TM)
+                           DesignWare (R)
+                           DC Expert (TM)
+                         Design Vision (TM)
+                          HDL Compiler (TM)
+                         VHDL Compiler (TM)
+                            DFT Compiler
+                        Library Compiler (TM)
+                         Design Compiler(R)
+
+          Version H-2013.03-SP4 for RHEL32 -- Sep 01, 2013
+               Copyright (c) 1988-2013 Synopsys, Inc.
+
+This software and the associated documentation are confidential and 
+proprietary to Synopsys, Inc. Your use or disclosure of this software 
+is subject to the terms and conditions of a written license agreement 
+between you, or your company, and Synopsys, Inc.
+
+Information: Invoking dc_shell using the 32-bit executable is not
+             recommended. It will be obsolete in a future release.
+             Please invoke dc_shell using the -64bit option.
+
+Initializing...
+# synthesis script
+sh date
+Tue Dec 21 21:15:33 +03 2021
+analyze -format verilog almost_correct_adder_32bit.v
+Running PRESTO HDLC
+Searching for ./almost_correct_adder_32bit.v
+Compiling source file ./almost_correct_adder_32bit.v
+Presto compilation completed successfully.
+Loading db file '/home/efeoztaban/almost_correct_32/saed90nm_max.db'
+Loading db file '/usr/local/synopsys/H-2013.03-SP4/libraries/syn/dw_foundation.sldb'
+1
+elaborate almost_correct_adder_32bit
+Loading db file '/usr/local/synopsys/H-2013.03-SP4/libraries/syn/gtech.db'
+Loading db file '/usr/local/synopsys/H-2013.03-SP4/libraries/syn/standard.sldb'
+  Loading link library 'saed90nm_max'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+
+Inferred memory devices in process
+	in routine almost_correct_adder_32bit line 37 in file
+		'./almost_correct_adder_32bit.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      Cout_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|        S_reg        | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|     temp25_reg      | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+|      temp1_reg      | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|      temp2_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|      temp3_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|      temp4_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|      temp5_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|      temp6_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|      temp7_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|      temp8_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|      temp9_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     temp10_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     temp11_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     temp12_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     temp13_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     temp14_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     temp15_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     temp16_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     temp17_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     temp18_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     temp19_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     temp20_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     temp21_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     temp22_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     temp23_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     temp24_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'almost_correct_adder_32bit'.
+1
+set clock clk
+clk
+create_clock -period 1.28 $clock
+1
+set_clock_uncertainty 0.2 $clock
+1
+set_max_area 0
+1
+compile -map_effort high -scan
+Information: Choosing a test methodology will restrict the optimization of sequential cells. (UIO-12)
+Information: Checking out the license 'DesignWare'. (SEC-104)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | H-2013.03-DWBB_201303.4 |     *     |
+| Licensed DW Building Blocks        | H-2013.03-DWBB_201303.4 |     *     |
+============================================================================
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'almost_correct_adder_32bit'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Implementation Selection
+  ----------------------------------
+  Processing 'almost_correct_adder_32bit_DW01_add_0'
+  Processing 'almost_correct_adder_32bit_DW01_add_1'
+  Processing 'almost_correct_adder_32bit_DW01_add_2'
+  Processing 'almost_correct_adder_32bit_DW01_add_3'
+  Processing 'almost_correct_adder_32bit_DW01_add_4'
+  Processing 'almost_correct_adder_32bit_DW01_add_5'
+  Processing 'almost_correct_adder_32bit_DW01_add_6'
+  Processing 'almost_correct_adder_32bit_DW01_add_7'
+  Processing 'almost_correct_adder_32bit_DW01_add_8'
+  Processing 'almost_correct_adder_32bit_DW01_add_9'
+  Processing 'almost_correct_adder_32bit_DW01_add_10'
+  Processing 'almost_correct_adder_32bit_DW01_add_11'
+  Processing 'almost_correct_adder_32bit_DW01_add_12'
+  Processing 'almost_correct_adder_32bit_DW01_add_13'
+  Processing 'almost_correct_adder_32bit_DW01_add_14'
+  Processing 'almost_correct_adder_32bit_DW01_add_15'
+  Processing 'almost_correct_adder_32bit_DW01_add_16'
+  Processing 'almost_correct_adder_32bit_DW01_add_17'
+  Processing 'almost_correct_adder_32bit_DW01_add_18'
+  Processing 'almost_correct_adder_32bit_DW01_add_19'
+  Processing 'almost_correct_adder_32bit_DW01_add_20'
+  Processing 'almost_correct_adder_32bit_DW01_add_21'
+  Processing 'almost_correct_adder_32bit_DW01_add_22'
+  Processing 'almost_correct_adder_32bit_DW01_add_23'
+  Processing 'almost_correct_adder_32bit_DW01_add_24'
+
+  Beginning Mapping Optimizations  (High effort)
+  -------------------------------
+  Mapping Optimization (Phase 1)
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:03    6564.2      0.00       0.0     481.6                          
+    0:00:04    6564.2      0.00       0.0     481.6                          
+    0:00:04    6564.2      0.00       0.0     481.6                          
+    0:00:04    6564.2      0.00       0.0     481.6                          
+    0:00:04    6564.2      0.00       0.0     481.6                          
+    0:00:04    6088.5      0.00       0.0     480.8                          
+    0:00:04    6088.5      0.00       0.0     480.8                          
+    0:00:04    6088.5      0.00       0.0     480.8                          
+    0:00:04    6088.5      0.00       0.0     480.8                          
+    0:00:04    6088.5      0.00       0.0     480.8                          
+    0:00:06    6220.8      0.00       0.0     413.3                          
+    0:00:07    6220.8      0.00       0.0     413.3                          
+    0:00:07    6220.8      0.00       0.0     413.3                          
+    0:00:07    6220.8      0.00       0.0     413.3                          
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:07    6220.8      0.00       0.0     413.3                          
+    0:00:07    6220.8      0.00       0.0     413.3                          
+    0:00:07    6220.8      0.00       0.0     413.3                          
+
+
+  Beginning Design Rule Fixing  (max_transition)
+  ----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:07    6220.8      0.00       0.0     413.3                          
+    0:00:08    6642.7      0.00       0.0     272.2 add_58/net571            
+    0:00:08    7064.5      0.00       0.0     131.1 add_58/net567            
+    0:00:08    7464.3      0.00       0.0      76.5 add_58/net563            
+    0:00:08    8129.2      0.00       0.0      37.9 add_54/net737            
+    0:00:09    8246.4      0.00       0.0      24.3 add_60/net484            
+    0:00:09    8312.7      0.00       0.0       0.0                          
+
+
+  Beginning Area-Recovery Phase  (max_area 0)
+  -----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:09    8312.7      0.00       0.0       0.0                          
+    0:00:09    8312.7      0.00       0.0       0.0                          
+    0:00:09    8087.6      0.00       0.0       0.0                          
+    0:00:09    8087.6      0.00       0.0       0.0                          
+    0:00:09    8087.6      0.00       0.0       0.0                          
+    0:00:09    8087.6      0.00       0.0       0.0                          
+    0:00:09    8087.6      0.00       0.0       0.0                          
+    0:00:09    7821.8      0.00       0.0       0.0                          
+    0:00:09    7821.8      0.00       0.0       0.0                          
+    0:00:09    7821.8      0.00       0.0       0.0                          
+    0:00:09    7821.8      0.00       0.0       0.0                          
+    0:00:09    7821.8      0.00       0.0       0.0                          
+    0:00:09    7821.8      0.00       0.0       0.0                          
+    0:00:09    7821.8      0.00       0.0       0.0                          
+    0:00:10    7821.8      0.00       0.0       0.0                          
+    0:00:10    7821.8      0.00       0.0       0.0                          
+    0:00:10    7821.8      0.00       0.0       0.0                          
+    0:00:10    7821.8      0.00       0.0       0.0                          
+    0:00:10    7821.8      0.00       0.0       0.0                          
+    0:00:10    7821.8      0.00       0.0       0.0                          
+    0:00:10    7821.8      0.00       0.0       0.0                          
+    0:00:10    7821.8      0.00       0.0       0.0                          
+    0:00:10    7821.8      0.00       0.0       0.0                          
+    0:00:10    7821.8      0.00       0.0       0.0                          
+    0:00:10    7821.8      0.00       0.0       0.0                          
+    0:00:10    7821.8      0.00       0.0       0.0                          
+    0:00:10    7821.8      0.00       0.0       0.0                          
+    0:00:10    7821.8      0.00       0.0       0.0                          
+    0:00:10    7821.8      0.00       0.0       0.0                          
+    0:00:10    7821.8      0.00       0.0       0.0                          
+Loading db file '/home/efeoztaban/almost_correct_32/saed90nm_max.db'
+
+  Optimization Complete
+  ---------------------
+1
+redirect area_report { report_area }
+redirect timing_report { report_timing -max_paths 5 }
+write -format verilog -hier -output almost_correct_adder_32bit.vnetlist
+Writing verilog file '/home/efeoztaban/almost_correct_32/almost_correct_adder_32bit.vnetlist'.
+Warning: Verilog writer has added 168 nets to module almost_correct_adder_32bit using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+1
+sh date
+Tue Dec 21 21:15:45 +03 2021
+quit
+
+Thank you...

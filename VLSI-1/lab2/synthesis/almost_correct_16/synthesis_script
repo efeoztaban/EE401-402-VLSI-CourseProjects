@@ -1,0 +1,16 @@
+
+# synthesis script
+sh date
+analyze -format verilog almost_correct_adder_16bit.v
+elaborate almost_correct_adder_16bit
+set clock clk
+create_clock -period 6.4 $clock
+set_clock_uncertainty 0.2 $clock
+
+set_max_area 0
+compile -map_effort high -scan
+redirect area_report { report_area }
+redirect timing_report { report_timing -max_paths 5 }
+write -format verilog -hier -output almost_correct_adder_16bit.vnetlist
+sh date
+quit

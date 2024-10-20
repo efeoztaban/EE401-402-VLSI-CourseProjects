@@ -1,0 +1,242 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 5
+Design : accuracy_configurable_adder_32bit
+Version: H-2013.03-SP4
+Date   : Tue Dec 21 19:56:59 2021
+****************************************
+
+Operating Conditions: WORST   Library: saed90nm_max
+Wire Load Model Mode: enclosed
+
+  Startpoint: b_reg_reg[7]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: Sum_reg[11]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  accuracy_configurable_adder_32bit
+                     8000                  saed90nm_max
+  accuracy_configurable_adder_32bit_DW01_add_11
+                     8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  b_reg_reg[7]/CLK (SDFFX1)                               0.00       0.00 r
+  b_reg_reg[7]/Q (SDFFX1)                                 0.68       0.68 f
+  add_35/B[3] (accuracy_configurable_adder_32bit_DW01_add_11)
+                                                          0.00       0.68 f
+  add_35/U70/QN (NOR2X0)                                  0.31       1.00 r
+  add_35/U75/QN (OAI21X1)                                 0.55       1.54 f
+  add_35/U61/QN (AOI21X1)                                 0.40       1.94 r
+  add_35/U72/Q (OA21X1)                                   0.43       2.37 r
+  add_35/U81/Q (XOR2X1)                                   0.42       2.79 f
+  add_35/SUM[7] (accuracy_configurable_adder_32bit_DW01_add_11)
+                                                          0.00       2.79 f
+  Sum_reg[11]/D (SDFFX1)                                  0.00       2.79 f
+  data arrival time                                                  2.79
+
+  clock clk (rise edge)                                   3.50       3.50
+  clock network delay (ideal)                             0.00       3.50
+  clock uncertainty                                      -0.20       3.30
+  Sum_reg[11]/CLK (SDFFX1)                                0.00       3.30 r
+  library setup time                                     -0.51       2.79
+  data required time                                                 2.79
+  --------------------------------------------------------------------------
+  data required time                                                 2.79
+  data arrival time                                                 -2.79
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+  Startpoint: b_reg_reg[28]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: Sum_reg[31]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  accuracy_configurable_adder_32bit
+                     8000                  saed90nm_max
+  accuracy_configurable_adder_32bit_DW01_add_12
+                     8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  b_reg_reg[28]/CLK (SDFFX1)                              0.00       0.00 r
+  b_reg_reg[28]/Q (SDFFX1)                                0.69       0.69 f
+  add_40/B[4] (accuracy_configurable_adder_32bit_DW01_add_12)
+                                                          0.00       0.69 f
+  add_40/U67/QN (NOR2X0)                                  0.42       1.11 r
+  add_40/U63/QN (NOR2X0)                                  0.44       1.55 f
+  add_40/U71/QN (NAND2X0)                                 0.27       1.82 r
+  add_40/U64/Q (OR2X1)                                    0.30       2.12 r
+  add_40/U59/Q (AND2X1)                                   0.28       2.41 r
+  add_40/U62/Q (ISOLORX1)                                 0.23       2.64 r
+  add_40/U61/QN (NAND2X1)                                 0.15       2.79 f
+  add_40/SUM[7] (accuracy_configurable_adder_32bit_DW01_add_12)
+                                                          0.00       2.79 f
+  Sum_reg[31]/D (SDFFX1)                                  0.00       2.79 f
+  data arrival time                                                  2.79
+
+  clock clk (rise edge)                                   3.50       3.50
+  clock network delay (ideal)                             0.00       3.50
+  clock uncertainty                                      -0.20       3.30
+  Sum_reg[31]/CLK (SDFFX1)                                0.00       3.30 r
+  library setup time                                     -0.51       2.79
+  data required time                                                 2.79
+  --------------------------------------------------------------------------
+  data required time                                                 2.79
+  data arrival time                                                 -2.79
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+  Startpoint: b_reg_reg[11]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: Sum_reg[15]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  accuracy_configurable_adder_32bit
+                     8000                  saed90nm_max
+  accuracy_configurable_adder_32bit_DW01_add_10
+                     8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  b_reg_reg[11]/CLK (SDFFX1)                              0.00       0.00 r
+  b_reg_reg[11]/Q (SDFFX1)                                0.75       0.75 f
+  add_36/B[3] (accuracy_configurable_adder_32bit_DW01_add_10)
+                                                          0.00       0.75 f
+  add_36/U50/QN (NOR2X1)                                  0.27       1.02 r
+  add_36/U71/QN (OAI21X1)                                 0.52       1.54 f
+  add_36/U59/QN (AOI21X1)                                 0.40       1.94 r
+  add_36/U49/Q (OA21X1)                                   0.43       2.37 r
+  add_36/U80/Q (XOR2X1)                                   0.42       2.79 f
+  add_36/SUM[7] (accuracy_configurable_adder_32bit_DW01_add_10)
+                                                          0.00       2.79 f
+  Sum_reg[15]/D (SDFFX1)                                  0.00       2.79 f
+  data arrival time                                                  2.79
+
+  clock clk (rise edge)                                   3.50       3.50
+  clock network delay (ideal)                             0.00       3.50
+  clock uncertainty                                      -0.20       3.30
+  Sum_reg[15]/CLK (SDFFX1)                                0.00       3.30 r
+  library setup time                                     -0.51       2.79
+  data required time                                                 2.79
+  --------------------------------------------------------------------------
+  data required time                                                 2.79
+  data arrival time                                                 -2.79
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+  Startpoint: b_reg_reg[15]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: Sum_reg[19]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  accuracy_configurable_adder_32bit
+                     8000                  saed90nm_max
+  accuracy_configurable_adder_32bit_DW01_add_9
+                     8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  b_reg_reg[15]/CLK (SDFFX1)                              0.00       0.00 r
+  b_reg_reg[15]/Q (SDFFX1)                                0.75       0.75 f
+  add_37/B[3] (accuracy_configurable_adder_32bit_DW01_add_9)
+                                                          0.00       0.75 f
+  add_37/U50/QN (NOR2X1)                                  0.27       1.02 r
+  add_37/U71/QN (OAI21X1)                                 0.52       1.54 f
+  add_37/U59/QN (AOI21X1)                                 0.40       1.94 r
+  add_37/U49/Q (OA21X1)                                   0.43       2.37 r
+  add_37/U80/Q (XOR2X1)                                   0.42       2.79 f
+  add_37/SUM[7] (accuracy_configurable_adder_32bit_DW01_add_9)
+                                                          0.00       2.79 f
+  Sum_reg[19]/D (SDFFX1)                                  0.00       2.79 f
+  data arrival time                                                  2.79
+
+  clock clk (rise edge)                                   3.50       3.50
+  clock network delay (ideal)                             0.00       3.50
+  clock uncertainty                                      -0.20       3.30
+  Sum_reg[19]/CLK (SDFFX1)                                0.00       3.30 r
+  library setup time                                     -0.51       2.79
+  data required time                                                 2.79
+  --------------------------------------------------------------------------
+  data required time                                                 2.79
+  data arrival time                                                 -2.79
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+  Startpoint: b_reg_reg[19]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: Sum_reg[23]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  accuracy_configurable_adder_32bit
+                     8000                  saed90nm_max
+  accuracy_configurable_adder_32bit_DW01_add_8
+                     8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  b_reg_reg[19]/CLK (SDFFX1)                              0.00       0.00 r
+  b_reg_reg[19]/Q (SDFFX1)                                0.75       0.75 f
+  add_38/B[3] (accuracy_configurable_adder_32bit_DW01_add_8)
+                                                          0.00       0.75 f
+  add_38/U50/QN (NOR2X1)                                  0.27       1.02 r
+  add_38/U71/QN (OAI21X1)                                 0.52       1.54 f
+  add_38/U59/QN (AOI21X1)                                 0.40       1.94 r
+  add_38/U49/Q (OA21X1)                                   0.43       2.37 r
+  add_38/U80/Q (XOR2X1)                                   0.42       2.79 f
+  add_38/SUM[7] (accuracy_configurable_adder_32bit_DW01_add_8)
+                                                          0.00       2.79 f
+  Sum_reg[23]/D (SDFFX1)                                  0.00       2.79 f
+  data arrival time                                                  2.79
+
+  clock clk (rise edge)                                   3.50       3.50
+  clock network delay (ideal)                             0.00       3.50
+  clock uncertainty                                      -0.20       3.30
+  Sum_reg[23]/CLK (SDFFX1)                                0.00       3.30 r
+  library setup time                                     -0.51       2.79
+  data required time                                                 2.79
+  --------------------------------------------------------------------------
+  data required time                                                 2.79
+  data arrival time                                                 -2.79
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+1

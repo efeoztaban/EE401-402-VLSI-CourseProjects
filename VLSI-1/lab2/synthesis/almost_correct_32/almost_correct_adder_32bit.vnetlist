@@ -1,0 +1,1103 @@
+
+module almost_correct_adder_32bit_DW01_add_0 ( A, B, CI, SUM, CO );
+  input [8:0] A;
+  input [8:0] B;
+  output [8:0] SUM;
+  input CI;
+  output CO;
+  wire   \carry[7] , n1, n2, n3, n4, n5, n6, n7, n8, n9, n10, n11, n12, n13,
+         n14, n15, n16;
+
+  FADDX1 U1_7 ( .A(A[7]), .B(B[7]), .CI(\carry[7] ), .CO(SUM[8]), .S(SUM[7])
+         );
+  ISOLORX2 U1 ( .D(n7), .ISO(A[2]), .Q(n15) );
+  ISOLORX2 U2 ( .D(n6), .ISO(A[4]), .Q(n12) );
+  ISOLORX2 U3 ( .D(n3), .ISO(A[5]), .Q(n10) );
+  ISOLORX2 U4 ( .D(n5), .ISO(A[6]), .Q(n9) );
+  AOI22X2 U5 ( .IN1(A[2]), .IN2(n7), .IN3(B[2]), .IN4(n15), .QN(n1) );
+  AOI22X2 U6 ( .IN1(A[4]), .IN2(n6), .IN3(B[4]), .IN4(n12), .QN(n2) );
+  ISOLORX2 U7 ( .D(n4), .ISO(A[3]), .Q(n13) );
+  OA21X2 U8 ( .IN1(A[1]), .IN2(B[1]), .IN3(A[0]), .Q(n16) );
+  INVX4 U9 ( .IN(n2), .QN(n3) );
+  INVX4 U10 ( .IN(n1), .QN(n4) );
+  AOI22X2 U11 ( .IN1(A[5]), .IN2(n3), .IN3(B[5]), .IN4(n10), .QN(n8) );
+  INVX4 U12 ( .IN(n8), .QN(n5) );
+  AO22X2 U13 ( .IN1(A[6]), .IN2(n5), .IN3(B[6]), .IN4(n9), .Q(\carry[7] ) );
+  AOI22X2 U14 ( .IN1(A[3]), .IN2(n4), .IN3(B[3]), .IN4(n13), .QN(n11) );
+  INVX4 U15 ( .IN(n11), .QN(n6) );
+  AOI22X2 U16 ( .IN1(B[1]), .IN2(A[1]), .IN3(n16), .IN4(B[0]), .QN(n14) );
+  INVX4 U17 ( .IN(n14), .QN(n7) );
+endmodule
+
+
+module almost_correct_adder_32bit_DW01_add_1 ( A, B, CI, SUM, CO );
+  input [7:0] A;
+  input [7:0] B;
+  output [7:0] SUM;
+  input CI;
+  output CO;
+  wire   \carry[7] , n1, n2, n3, n4, n5, n6, n7, n8, n9, n10, n11, n12, n13,
+         n14, n15, n16;
+
+  XOR3X1 U1_7 ( .IN1(A[7]), .IN2(B[7]), .IN3(\carry[7] ), .Q(SUM[7]) );
+  ISOLORX2 U1 ( .D(n7), .ISO(A[2]), .Q(n15) );
+  ISOLORX2 U2 ( .D(n6), .ISO(A[4]), .Q(n12) );
+  ISOLORX2 U3 ( .D(n3), .ISO(A[5]), .Q(n10) );
+  ISOLORX2 U4 ( .D(n5), .ISO(A[6]), .Q(n9) );
+  AOI22X2 U5 ( .IN1(A[2]), .IN2(n7), .IN3(B[2]), .IN4(n15), .QN(n1) );
+  AOI22X2 U6 ( .IN1(A[4]), .IN2(n6), .IN3(B[4]), .IN4(n12), .QN(n2) );
+  OA21X2 U7 ( .IN1(A[1]), .IN2(B[1]), .IN3(A[0]), .Q(n16) );
+  ISOLORX2 U8 ( .D(n4), .ISO(A[3]), .Q(n13) );
+  INVX4 U9 ( .IN(n2), .QN(n3) );
+  INVX4 U10 ( .IN(n1), .QN(n4) );
+  AOI22X2 U11 ( .IN1(A[5]), .IN2(n3), .IN3(B[5]), .IN4(n10), .QN(n8) );
+  INVX4 U12 ( .IN(n8), .QN(n5) );
+  AO22X2 U13 ( .IN1(A[6]), .IN2(n5), .IN3(B[6]), .IN4(n9), .Q(\carry[7] ) );
+  AOI22X2 U14 ( .IN1(A[3]), .IN2(n4), .IN3(B[3]), .IN4(n13), .QN(n11) );
+  INVX4 U15 ( .IN(n11), .QN(n6) );
+  AOI22X2 U16 ( .IN1(B[1]), .IN2(A[1]), .IN3(n16), .IN4(B[0]), .QN(n14) );
+  INVX4 U17 ( .IN(n14), .QN(n7) );
+endmodule
+
+
+module almost_correct_adder_32bit_DW01_add_2 ( A, B, CI, SUM, CO );
+  input [7:0] A;
+  input [7:0] B;
+  output [7:0] SUM;
+  input CI;
+  output CO;
+  wire   \carry[7] , n1, n2, n3, n4, n5, n6, n7, n8, n9, n10, n11, n12, n13,
+         n14, n15, n16;
+
+  XOR3X1 U1_7 ( .IN1(A[7]), .IN2(B[7]), .IN3(\carry[7] ), .Q(SUM[7]) );
+  ISOLORX2 U1 ( .D(n7), .ISO(A[2]), .Q(n15) );
+  ISOLORX2 U2 ( .D(n6), .ISO(A[4]), .Q(n12) );
+  ISOLORX2 U3 ( .D(n3), .ISO(A[5]), .Q(n10) );
+  ISOLORX2 U4 ( .D(n5), .ISO(A[6]), .Q(n9) );
+  AOI22X2 U5 ( .IN1(A[2]), .IN2(n7), .IN3(B[2]), .IN4(n15), .QN(n1) );
+  AOI22X2 U6 ( .IN1(A[4]), .IN2(n6), .IN3(B[4]), .IN4(n12), .QN(n2) );
+  ISOLORX2 U7 ( .D(n4), .ISO(A[3]), .Q(n13) );
+  OA21X2 U8 ( .IN1(A[1]), .IN2(B[1]), .IN3(A[0]), .Q(n16) );
+  INVX4 U9 ( .IN(n2), .QN(n3) );
+  INVX4 U10 ( .IN(n1), .QN(n4) );
+  AOI22X2 U11 ( .IN1(A[5]), .IN2(n3), .IN3(B[5]), .IN4(n10), .QN(n8) );
+  INVX4 U12 ( .IN(n8), .QN(n5) );
+  AO22X2 U13 ( .IN1(A[6]), .IN2(n5), .IN3(B[6]), .IN4(n9), .Q(\carry[7] ) );
+  AOI22X2 U14 ( .IN1(A[3]), .IN2(n4), .IN3(B[3]), .IN4(n13), .QN(n11) );
+  INVX4 U15 ( .IN(n11), .QN(n6) );
+  AOI22X2 U16 ( .IN1(B[1]), .IN2(A[1]), .IN3(n16), .IN4(B[0]), .QN(n14) );
+  INVX4 U17 ( .IN(n14), .QN(n7) );
+endmodule
+
+
+module almost_correct_adder_32bit_DW01_add_3 ( A, B, CI, SUM, CO );
+  input [7:0] A;
+  input [7:0] B;
+  output [7:0] SUM;
+  input CI;
+  output CO;
+  wire   \carry[7] , n1, n2, n3, n4, n5, n6, n7, n8, n9, n10, n11, n12, n13,
+         n14, n15, n16;
+
+  XOR3X1 U1_7 ( .IN1(A[7]), .IN2(B[7]), .IN3(\carry[7] ), .Q(SUM[7]) );
+  ISOLORX2 U1 ( .D(n7), .ISO(A[2]), .Q(n15) );
+  ISOLORX2 U2 ( .D(n6), .ISO(A[4]), .Q(n12) );
+  ISOLORX2 U3 ( .D(n3), .ISO(A[5]), .Q(n10) );
+  ISOLORX2 U4 ( .D(n5), .ISO(A[6]), .Q(n9) );
+  AOI22X2 U5 ( .IN1(A[2]), .IN2(n7), .IN3(B[2]), .IN4(n15), .QN(n1) );
+  AOI22X2 U6 ( .IN1(A[4]), .IN2(n6), .IN3(B[4]), .IN4(n12), .QN(n2) );
+  ISOLORX2 U7 ( .D(n4), .ISO(A[3]), .Q(n13) );
+  OA21X2 U8 ( .IN1(A[1]), .IN2(B[1]), .IN3(A[0]), .Q(n16) );
+  INVX4 U9 ( .IN(n2), .QN(n3) );
+  INVX4 U10 ( .IN(n1), .QN(n4) );
+  AOI22X2 U11 ( .IN1(A[5]), .IN2(n3), .IN3(B[5]), .IN4(n10), .QN(n8) );
+  INVX4 U12 ( .IN(n8), .QN(n5) );
+  AO22X2 U13 ( .IN1(A[6]), .IN2(n5), .IN3(B[6]), .IN4(n9), .Q(\carry[7] ) );
+  AOI22X2 U14 ( .IN1(A[3]), .IN2(n4), .IN3(B[3]), .IN4(n13), .QN(n11) );
+  INVX4 U15 ( .IN(n11), .QN(n6) );
+  AOI22X2 U16 ( .IN1(B[1]), .IN2(A[1]), .IN3(n16), .IN4(B[0]), .QN(n14) );
+  INVX4 U17 ( .IN(n14), .QN(n7) );
+endmodule
+
+
+module almost_correct_adder_32bit_DW01_add_4 ( A, B, CI, SUM, CO );
+  input [7:0] A;
+  input [7:0] B;
+  output [7:0] SUM;
+  input CI;
+  output CO;
+  wire   \carry[7] , n1, n2, n3, n4, n5, n6, n7, n8, n9, n10, n11, n12, n13,
+         n14, n15, n16;
+
+  XOR3X1 U1_7 ( .IN1(A[7]), .IN2(B[7]), .IN3(\carry[7] ), .Q(SUM[7]) );
+  ISOLORX2 U1 ( .D(n7), .ISO(A[2]), .Q(n15) );
+  ISOLORX2 U2 ( .D(n6), .ISO(A[4]), .Q(n12) );
+  ISOLORX2 U3 ( .D(n3), .ISO(A[5]), .Q(n10) );
+  ISOLORX2 U4 ( .D(n5), .ISO(A[6]), .Q(n9) );
+  AOI22X2 U5 ( .IN1(A[2]), .IN2(n7), .IN3(B[2]), .IN4(n15), .QN(n1) );
+  AOI22X2 U6 ( .IN1(A[4]), .IN2(n6), .IN3(B[4]), .IN4(n12), .QN(n2) );
+  ISOLORX2 U7 ( .D(n4), .ISO(A[3]), .Q(n13) );
+  OA21X2 U8 ( .IN1(A[1]), .IN2(B[1]), .IN3(A[0]), .Q(n16) );
+  INVX4 U9 ( .IN(n2), .QN(n3) );
+  INVX4 U10 ( .IN(n1), .QN(n4) );
+  AOI22X2 U11 ( .IN1(A[5]), .IN2(n3), .IN3(B[5]), .IN4(n10), .QN(n8) );
+  INVX4 U12 ( .IN(n8), .QN(n5) );
+  AO22X2 U13 ( .IN1(A[6]), .IN2(n5), .IN3(B[6]), .IN4(n9), .Q(\carry[7] ) );
+  AOI22X2 U14 ( .IN1(A[3]), .IN2(n4), .IN3(B[3]), .IN4(n13), .QN(n11) );
+  INVX4 U15 ( .IN(n11), .QN(n6) );
+  AOI22X2 U16 ( .IN1(B[1]), .IN2(A[1]), .IN3(n16), .IN4(B[0]), .QN(n14) );
+  INVX4 U17 ( .IN(n14), .QN(n7) );
+endmodule
+
+
+module almost_correct_adder_32bit_DW01_add_5 ( A, B, CI, SUM, CO );
+  input [7:0] A;
+  input [7:0] B;
+  output [7:0] SUM;
+  input CI;
+  output CO;
+  wire   \carry[7] , n1, n2, n3, n4, n5, n6, n7, n8, n9, n10, n11, n12, n13,
+         n14, n15, n16;
+
+  XOR3X1 U1_7 ( .IN1(A[7]), .IN2(B[7]), .IN3(\carry[7] ), .Q(SUM[7]) );
+  ISOLORX2 U1 ( .D(n7), .ISO(A[2]), .Q(n15) );
+  ISOLORX2 U2 ( .D(n6), .ISO(A[4]), .Q(n12) );
+  ISOLORX2 U3 ( .D(n3), .ISO(A[5]), .Q(n10) );
+  ISOLORX2 U4 ( .D(n5), .ISO(A[6]), .Q(n9) );
+  AOI22X2 U5 ( .IN1(A[2]), .IN2(n7), .IN3(B[2]), .IN4(n15), .QN(n1) );
+  AOI22X2 U6 ( .IN1(A[4]), .IN2(n6), .IN3(B[4]), .IN4(n12), .QN(n2) );
+  ISOLORX2 U7 ( .D(n4), .ISO(A[3]), .Q(n13) );
+  OA21X2 U8 ( .IN1(A[1]), .IN2(B[1]), .IN3(A[0]), .Q(n16) );
+  INVX4 U9 ( .IN(n2), .QN(n3) );
+  INVX4 U10 ( .IN(n1), .QN(n4) );
+  AOI22X2 U11 ( .IN1(A[5]), .IN2(n3), .IN3(B[5]), .IN4(n10), .QN(n8) );
+  INVX4 U12 ( .IN(n8), .QN(n5) );
+  AO22X2 U13 ( .IN1(A[6]), .IN2(n5), .IN3(B[6]), .IN4(n9), .Q(\carry[7] ) );
+  AOI22X2 U14 ( .IN1(A[3]), .IN2(n4), .IN3(B[3]), .IN4(n13), .QN(n11) );
+  INVX4 U15 ( .IN(n11), .QN(n6) );
+  AOI22X2 U16 ( .IN1(B[1]), .IN2(A[1]), .IN3(n16), .IN4(B[0]), .QN(n14) );
+  INVX4 U17 ( .IN(n14), .QN(n7) );
+endmodule
+
+
+module almost_correct_adder_32bit_DW01_add_6 ( A, B, CI, SUM, CO );
+  input [7:0] A;
+  input [7:0] B;
+  output [7:0] SUM;
+  input CI;
+  output CO;
+  wire   \carry[7] , n1, n2, n3, n4, n5, n6, n7, n8, n9, n10, n11, n12, n13,
+         n14, n15, n16;
+
+  XOR3X1 U1_7 ( .IN1(A[7]), .IN2(B[7]), .IN3(\carry[7] ), .Q(SUM[7]) );
+  ISOLORX2 U1 ( .D(n7), .ISO(A[2]), .Q(n15) );
+  ISOLORX2 U2 ( .D(n6), .ISO(A[4]), .Q(n12) );
+  ISOLORX2 U3 ( .D(n3), .ISO(A[5]), .Q(n10) );
+  ISOLORX2 U4 ( .D(n5), .ISO(A[6]), .Q(n9) );
+  AOI22X2 U5 ( .IN1(A[2]), .IN2(n7), .IN3(B[2]), .IN4(n15), .QN(n1) );
+  AOI22X2 U6 ( .IN1(A[4]), .IN2(n6), .IN3(B[4]), .IN4(n12), .QN(n2) );
+  ISOLORX2 U7 ( .D(n4), .ISO(A[3]), .Q(n13) );
+  OA21X2 U8 ( .IN1(A[1]), .IN2(B[1]), .IN3(A[0]), .Q(n16) );
+  INVX4 U9 ( .IN(n2), .QN(n3) );
+  INVX4 U10 ( .IN(n1), .QN(n4) );
+  AOI22X2 U11 ( .IN1(A[5]), .IN2(n3), .IN3(B[5]), .IN4(n10), .QN(n8) );
+  INVX4 U12 ( .IN(n8), .QN(n5) );
+  AO22X2 U13 ( .IN1(A[6]), .IN2(n5), .IN3(B[6]), .IN4(n9), .Q(\carry[7] ) );
+  AOI22X2 U14 ( .IN1(A[3]), .IN2(n4), .IN3(B[3]), .IN4(n13), .QN(n11) );
+  INVX4 U15 ( .IN(n11), .QN(n6) );
+  AOI22X2 U16 ( .IN1(B[1]), .IN2(A[1]), .IN3(n16), .IN4(B[0]), .QN(n14) );
+  INVX4 U17 ( .IN(n14), .QN(n7) );
+endmodule
+
+
+module almost_correct_adder_32bit_DW01_add_7 ( A, B, CI, SUM, CO );
+  input [7:0] A;
+  input [7:0] B;
+  output [7:0] SUM;
+  input CI;
+  output CO;
+  wire   \carry[7] , n1, n2, n3, n4, n5, n6, n7, n8, n9, n10, n11, n12, n13,
+         n14, n15, n16;
+
+  XOR3X1 U1_7 ( .IN1(A[7]), .IN2(B[7]), .IN3(\carry[7] ), .Q(SUM[7]) );
+  ISOLORX2 U1 ( .D(n7), .ISO(A[2]), .Q(n15) );
+  ISOLORX2 U2 ( .D(n6), .ISO(A[4]), .Q(n12) );
+  ISOLORX2 U3 ( .D(n3), .ISO(A[5]), .Q(n10) );
+  ISOLORX2 U4 ( .D(n5), .ISO(A[6]), .Q(n9) );
+  AOI22X2 U5 ( .IN1(A[2]), .IN2(n7), .IN3(B[2]), .IN4(n15), .QN(n1) );
+  AOI22X2 U6 ( .IN1(A[4]), .IN2(n6), .IN3(B[4]), .IN4(n12), .QN(n2) );
+  ISOLORX2 U7 ( .D(n4), .ISO(A[3]), .Q(n13) );
+  OA21X2 U8 ( .IN1(A[1]), .IN2(B[1]), .IN3(A[0]), .Q(n16) );
+  INVX4 U9 ( .IN(n2), .QN(n3) );
+  INVX4 U10 ( .IN(n1), .QN(n4) );
+  AOI22X2 U11 ( .IN1(A[5]), .IN2(n3), .IN3(B[5]), .IN4(n10), .QN(n8) );
+  INVX4 U12 ( .IN(n8), .QN(n5) );
+  AO22X2 U13 ( .IN1(A[6]), .IN2(n5), .IN3(B[6]), .IN4(n9), .Q(\carry[7] ) );
+  AOI22X2 U14 ( .IN1(A[3]), .IN2(n4), .IN3(B[3]), .IN4(n13), .QN(n11) );
+  INVX4 U15 ( .IN(n11), .QN(n6) );
+  AOI22X2 U16 ( .IN1(B[1]), .IN2(A[1]), .IN3(n16), .IN4(B[0]), .QN(n14) );
+  INVX4 U17 ( .IN(n14), .QN(n7) );
+endmodule
+
+
+module almost_correct_adder_32bit_DW01_add_8 ( A, B, CI, SUM, CO );
+  input [7:0] A;
+  input [7:0] B;
+  output [7:0] SUM;
+  input CI;
+  output CO;
+  wire   \carry[7] , n1, n2, n3, n4, n5, n6, n7, n8, n9, n10, n11, n12, n13,
+         n14, n15, n16;
+
+  XOR3X1 U1_7 ( .IN1(A[7]), .IN2(B[7]), .IN3(\carry[7] ), .Q(SUM[7]) );
+  ISOLORX2 U1 ( .D(n7), .ISO(A[2]), .Q(n15) );
+  ISOLORX2 U2 ( .D(n6), .ISO(A[4]), .Q(n12) );
+  ISOLORX2 U3 ( .D(n3), .ISO(A[5]), .Q(n10) );
+  ISOLORX2 U4 ( .D(n5), .ISO(A[6]), .Q(n9) );
+  AOI22X2 U5 ( .IN1(A[2]), .IN2(n7), .IN3(B[2]), .IN4(n15), .QN(n1) );
+  AOI22X2 U6 ( .IN1(A[4]), .IN2(n6), .IN3(B[4]), .IN4(n12), .QN(n2) );
+  ISOLORX2 U7 ( .D(n4), .ISO(A[3]), .Q(n13) );
+  OA21X2 U8 ( .IN1(A[1]), .IN2(B[1]), .IN3(A[0]), .Q(n16) );
+  INVX4 U9 ( .IN(n2), .QN(n3) );
+  INVX4 U10 ( .IN(n1), .QN(n4) );
+  AOI22X2 U11 ( .IN1(A[5]), .IN2(n3), .IN3(B[5]), .IN4(n10), .QN(n8) );
+  INVX4 U12 ( .IN(n8), .QN(n5) );
+  AO22X2 U13 ( .IN1(A[6]), .IN2(n5), .IN3(B[6]), .IN4(n9), .Q(\carry[7] ) );
+  AOI22X2 U14 ( .IN1(A[3]), .IN2(n4), .IN3(B[3]), .IN4(n13), .QN(n11) );
+  INVX4 U15 ( .IN(n11), .QN(n6) );
+  AOI22X2 U16 ( .IN1(B[1]), .IN2(A[1]), .IN3(n16), .IN4(B[0]), .QN(n14) );
+  INVX4 U17 ( .IN(n14), .QN(n7) );
+endmodule
+
+
+module almost_correct_adder_32bit_DW01_add_9 ( A, B, CI, SUM, CO );
+  input [7:0] A;
+  input [7:0] B;
+  output [7:0] SUM;
+  input CI;
+  output CO;
+  wire   \carry[7] , n1, n2, n3, n4, n5, n6, n7, n8, n9, n10, n11, n12, n13,
+         n14, n15, n16;
+
+  XOR3X1 U1_7 ( .IN1(A[7]), .IN2(B[7]), .IN3(\carry[7] ), .Q(SUM[7]) );
+  ISOLORX2 U1 ( .D(n7), .ISO(A[2]), .Q(n15) );
+  ISOLORX2 U2 ( .D(n6), .ISO(A[4]), .Q(n12) );
+  ISOLORX2 U3 ( .D(n3), .ISO(A[5]), .Q(n10) );
+  ISOLORX2 U4 ( .D(n5), .ISO(A[6]), .Q(n9) );
+  AOI22X2 U5 ( .IN1(A[2]), .IN2(n7), .IN3(B[2]), .IN4(n15), .QN(n1) );
+  AOI22X2 U6 ( .IN1(A[4]), .IN2(n6), .IN3(B[4]), .IN4(n12), .QN(n2) );
+  ISOLORX2 U7 ( .D(n4), .ISO(A[3]), .Q(n13) );
+  OA21X2 U8 ( .IN1(A[1]), .IN2(B[1]), .IN3(A[0]), .Q(n16) );
+  INVX4 U9 ( .IN(n2), .QN(n3) );
+  INVX4 U10 ( .IN(n1), .QN(n4) );
+  AOI22X2 U11 ( .IN1(A[5]), .IN2(n3), .IN3(B[5]), .IN4(n10), .QN(n8) );
+  INVX4 U12 ( .IN(n8), .QN(n5) );
+  AO22X2 U13 ( .IN1(A[6]), .IN2(n5), .IN3(B[6]), .IN4(n9), .Q(\carry[7] ) );
+  AOI22X2 U14 ( .IN1(A[3]), .IN2(n4), .IN3(B[3]), .IN4(n13), .QN(n11) );
+  INVX4 U15 ( .IN(n11), .QN(n6) );
+  AOI22X2 U16 ( .IN1(B[1]), .IN2(A[1]), .IN3(n16), .IN4(B[0]), .QN(n14) );
+  INVX4 U17 ( .IN(n14), .QN(n7) );
+endmodule
+
+
+module almost_correct_adder_32bit_DW01_add_10 ( A, B, CI, SUM, CO );
+  input [7:0] A;
+  input [7:0] B;
+  output [7:0] SUM;
+  input CI;
+  output CO;
+  wire   \carry[7] , n1, n2, n3, n4, n5, n6, n7, n8, n9, n10, n11, n12, n13,
+         n14, n15, n16;
+
+  XOR3X1 U1_7 ( .IN1(A[7]), .IN2(B[7]), .IN3(\carry[7] ), .Q(SUM[7]) );
+  ISOLORX2 U1 ( .D(n7), .ISO(A[2]), .Q(n15) );
+  ISOLORX2 U2 ( .D(n6), .ISO(A[4]), .Q(n12) );
+  ISOLORX2 U3 ( .D(n3), .ISO(A[5]), .Q(n10) );
+  ISOLORX2 U4 ( .D(n5), .ISO(A[6]), .Q(n9) );
+  AOI22X2 U5 ( .IN1(A[2]), .IN2(n7), .IN3(B[2]), .IN4(n15), .QN(n1) );
+  AOI22X2 U6 ( .IN1(A[4]), .IN2(n6), .IN3(B[4]), .IN4(n12), .QN(n2) );
+  ISOLORX2 U7 ( .D(n4), .ISO(A[3]), .Q(n13) );
+  OA21X2 U8 ( .IN1(A[1]), .IN2(B[1]), .IN3(A[0]), .Q(n16) );
+  INVX4 U9 ( .IN(n2), .QN(n3) );
+  INVX4 U10 ( .IN(n1), .QN(n4) );
+  AOI22X2 U11 ( .IN1(A[5]), .IN2(n3), .IN3(B[5]), .IN4(n10), .QN(n8) );
+  INVX4 U12 ( .IN(n8), .QN(n5) );
+  AO22X2 U13 ( .IN1(A[6]), .IN2(n5), .IN3(B[6]), .IN4(n9), .Q(\carry[7] ) );
+  AOI22X2 U14 ( .IN1(A[3]), .IN2(n4), .IN3(B[3]), .IN4(n13), .QN(n11) );
+  INVX4 U15 ( .IN(n11), .QN(n6) );
+  AOI22X2 U16 ( .IN1(B[1]), .IN2(A[1]), .IN3(n16), .IN4(B[0]), .QN(n14) );
+  INVX4 U17 ( .IN(n14), .QN(n7) );
+endmodule
+
+
+module almost_correct_adder_32bit_DW01_add_11 ( A, B, CI, SUM, CO );
+  input [7:0] A;
+  input [7:0] B;
+  output [7:0] SUM;
+  input CI;
+  output CO;
+  wire   \carry[7] , n1, n2, n3, n4, n5, n6, n7, n8, n9, n10, n11, n12, n13,
+         n14, n15, n16;
+
+  XOR3X1 U1_7 ( .IN1(A[7]), .IN2(B[7]), .IN3(\carry[7] ), .Q(SUM[7]) );
+  ISOLORX2 U1 ( .D(n7), .ISO(A[2]), .Q(n15) );
+  ISOLORX2 U2 ( .D(n6), .ISO(A[4]), .Q(n12) );
+  ISOLORX2 U3 ( .D(n3), .ISO(A[5]), .Q(n10) );
+  ISOLORX2 U4 ( .D(n5), .ISO(A[6]), .Q(n9) );
+  AOI22X2 U5 ( .IN1(A[2]), .IN2(n7), .IN3(B[2]), .IN4(n15), .QN(n1) );
+  AOI22X2 U6 ( .IN1(A[4]), .IN2(n6), .IN3(B[4]), .IN4(n12), .QN(n2) );
+  ISOLORX2 U7 ( .D(n4), .ISO(A[3]), .Q(n13) );
+  OA21X2 U8 ( .IN1(A[1]), .IN2(B[1]), .IN3(A[0]), .Q(n16) );
+  INVX4 U9 ( .IN(n2), .QN(n3) );
+  INVX4 U10 ( .IN(n1), .QN(n4) );
+  AOI22X2 U11 ( .IN1(A[5]), .IN2(n3), .IN3(B[5]), .IN4(n10), .QN(n8) );
+  INVX4 U12 ( .IN(n8), .QN(n5) );
+  AO22X2 U13 ( .IN1(A[6]), .IN2(n5), .IN3(B[6]), .IN4(n9), .Q(\carry[7] ) );
+  AOI22X2 U14 ( .IN1(A[3]), .IN2(n4), .IN3(B[3]), .IN4(n13), .QN(n11) );
+  INVX4 U15 ( .IN(n11), .QN(n6) );
+  AOI22X2 U16 ( .IN1(B[1]), .IN2(A[1]), .IN3(n16), .IN4(B[0]), .QN(n14) );
+  INVX4 U17 ( .IN(n14), .QN(n7) );
+endmodule
+
+
+module almost_correct_adder_32bit_DW01_add_12 ( A, B, CI, SUM, CO );
+  input [7:0] A;
+  input [7:0] B;
+  output [7:0] SUM;
+  input CI;
+  output CO;
+  wire   \carry[7] , n1, n2, n3, n4, n5, n6, n7, n8, n9, n10, n11, n12, n13,
+         n14, n15, n16;
+
+  XOR3X1 U1_7 ( .IN1(A[7]), .IN2(B[7]), .IN3(\carry[7] ), .Q(SUM[7]) );
+  ISOLORX2 U1 ( .D(n7), .ISO(A[2]), .Q(n15) );
+  ISOLORX2 U2 ( .D(n6), .ISO(A[4]), .Q(n12) );
+  ISOLORX2 U3 ( .D(n3), .ISO(A[5]), .Q(n10) );
+  ISOLORX2 U4 ( .D(n5), .ISO(A[6]), .Q(n9) );
+  AOI22X2 U5 ( .IN1(A[2]), .IN2(n7), .IN3(B[2]), .IN4(n15), .QN(n1) );
+  AOI22X2 U6 ( .IN1(A[4]), .IN2(n6), .IN3(B[4]), .IN4(n12), .QN(n2) );
+  ISOLORX2 U7 ( .D(n4), .ISO(A[3]), .Q(n13) );
+  OA21X2 U8 ( .IN1(A[1]), .IN2(B[1]), .IN3(A[0]), .Q(n16) );
+  INVX4 U9 ( .IN(n2), .QN(n3) );
+  INVX4 U10 ( .IN(n1), .QN(n4) );
+  AOI22X2 U11 ( .IN1(A[5]), .IN2(n3), .IN3(B[5]), .IN4(n10), .QN(n8) );
+  INVX4 U12 ( .IN(n8), .QN(n5) );
+  AO22X2 U13 ( .IN1(A[6]), .IN2(n5), .IN3(B[6]), .IN4(n9), .Q(\carry[7] ) );
+  AOI22X2 U14 ( .IN1(A[3]), .IN2(n4), .IN3(B[3]), .IN4(n13), .QN(n11) );
+  INVX4 U15 ( .IN(n11), .QN(n6) );
+  AOI22X2 U16 ( .IN1(B[1]), .IN2(A[1]), .IN3(n16), .IN4(B[0]), .QN(n14) );
+  INVX4 U17 ( .IN(n14), .QN(n7) );
+endmodule
+
+
+module almost_correct_adder_32bit_DW01_add_13 ( A, B, CI, SUM, CO );
+  input [7:0] A;
+  input [7:0] B;
+  output [7:0] SUM;
+  input CI;
+  output CO;
+  wire   \carry[7] , n1, n2, n3, n4, n5, n6, n7, n8, n9, n10, n11, n12, n13,
+         n14, n15, n16;
+
+  XOR3X1 U1_7 ( .IN1(A[7]), .IN2(B[7]), .IN3(\carry[7] ), .Q(SUM[7]) );
+  ISOLORX2 U1 ( .D(n7), .ISO(A[2]), .Q(n15) );
+  ISOLORX2 U2 ( .D(n6), .ISO(A[4]), .Q(n12) );
+  ISOLORX2 U3 ( .D(n3), .ISO(A[5]), .Q(n10) );
+  ISOLORX2 U4 ( .D(n5), .ISO(A[6]), .Q(n9) );
+  AOI22X2 U5 ( .IN1(A[2]), .IN2(n7), .IN3(B[2]), .IN4(n15), .QN(n1) );
+  AOI22X2 U6 ( .IN1(A[4]), .IN2(n6), .IN3(B[4]), .IN4(n12), .QN(n2) );
+  ISOLORX2 U7 ( .D(n4), .ISO(A[3]), .Q(n13) );
+  OA21X2 U8 ( .IN1(A[1]), .IN2(B[1]), .IN3(A[0]), .Q(n16) );
+  INVX4 U9 ( .IN(n2), .QN(n3) );
+  INVX4 U10 ( .IN(n1), .QN(n4) );
+  AOI22X2 U11 ( .IN1(A[5]), .IN2(n3), .IN3(B[5]), .IN4(n10), .QN(n8) );
+  INVX4 U12 ( .IN(n8), .QN(n5) );
+  AO22X2 U13 ( .IN1(A[6]), .IN2(n5), .IN3(B[6]), .IN4(n9), .Q(\carry[7] ) );
+  AOI22X2 U14 ( .IN1(A[3]), .IN2(n4), .IN3(B[3]), .IN4(n13), .QN(n11) );
+  INVX4 U15 ( .IN(n11), .QN(n6) );
+  AOI22X2 U16 ( .IN1(B[1]), .IN2(A[1]), .IN3(n16), .IN4(B[0]), .QN(n14) );
+  INVX4 U17 ( .IN(n14), .QN(n7) );
+endmodule
+
+
+module almost_correct_adder_32bit_DW01_add_14 ( A, B, CI, SUM, CO );
+  input [7:0] A;
+  input [7:0] B;
+  output [7:0] SUM;
+  input CI;
+  output CO;
+  wire   \carry[7] , n1, n2, n3, n4, n5, n6, n7, n8, n9, n10, n11, n12, n13,
+         n14, n15, n16;
+
+  XOR3X1 U1_7 ( .IN1(A[7]), .IN2(B[7]), .IN3(\carry[7] ), .Q(SUM[7]) );
+  ISOLORX2 U1 ( .D(n7), .ISO(A[2]), .Q(n15) );
+  ISOLORX2 U2 ( .D(n6), .ISO(A[4]), .Q(n12) );
+  ISOLORX2 U3 ( .D(n3), .ISO(A[5]), .Q(n10) );
+  ISOLORX2 U4 ( .D(n5), .ISO(A[6]), .Q(n9) );
+  AOI22X2 U5 ( .IN1(A[2]), .IN2(n7), .IN3(B[2]), .IN4(n15), .QN(n1) );
+  AOI22X2 U6 ( .IN1(A[4]), .IN2(n6), .IN3(B[4]), .IN4(n12), .QN(n2) );
+  ISOLORX2 U7 ( .D(n4), .ISO(A[3]), .Q(n13) );
+  OA21X2 U8 ( .IN1(A[1]), .IN2(B[1]), .IN3(A[0]), .Q(n16) );
+  INVX4 U9 ( .IN(n2), .QN(n3) );
+  INVX4 U10 ( .IN(n1), .QN(n4) );
+  AOI22X2 U11 ( .IN1(A[5]), .IN2(n3), .IN3(B[5]), .IN4(n10), .QN(n8) );
+  INVX4 U12 ( .IN(n8), .QN(n5) );
+  AO22X2 U13 ( .IN1(A[6]), .IN2(n5), .IN3(B[6]), .IN4(n9), .Q(\carry[7] ) );
+  AOI22X2 U14 ( .IN1(A[3]), .IN2(n4), .IN3(B[3]), .IN4(n13), .QN(n11) );
+  INVX4 U15 ( .IN(n11), .QN(n6) );
+  AOI22X2 U16 ( .IN1(B[1]), .IN2(A[1]), .IN3(n16), .IN4(B[0]), .QN(n14) );
+  INVX4 U17 ( .IN(n14), .QN(n7) );
+endmodule
+
+
+module almost_correct_adder_32bit_DW01_add_15 ( A, B, CI, SUM, CO );
+  input [7:0] A;
+  input [7:0] B;
+  output [7:0] SUM;
+  input CI;
+  output CO;
+  wire   \carry[7] , n1, n2, n3, n4, n5, n6, n7, n8, n9, n10, n11, n12, n13,
+         n14, n15, n16;
+
+  XOR3X1 U1_7 ( .IN1(A[7]), .IN2(B[7]), .IN3(\carry[7] ), .Q(SUM[7]) );
+  ISOLORX2 U1 ( .D(n7), .ISO(A[2]), .Q(n15) );
+  ISOLORX2 U2 ( .D(n6), .ISO(A[4]), .Q(n12) );
+  ISOLORX2 U3 ( .D(n3), .ISO(A[5]), .Q(n10) );
+  ISOLORX2 U4 ( .D(n5), .ISO(A[6]), .Q(n9) );
+  AOI22X2 U5 ( .IN1(A[2]), .IN2(n7), .IN3(B[2]), .IN4(n15), .QN(n1) );
+  AOI22X2 U6 ( .IN1(A[4]), .IN2(n6), .IN3(B[4]), .IN4(n12), .QN(n2) );
+  ISOLORX2 U7 ( .D(n4), .ISO(A[3]), .Q(n13) );
+  OA21X2 U8 ( .IN1(A[1]), .IN2(B[1]), .IN3(A[0]), .Q(n16) );
+  INVX4 U9 ( .IN(n2), .QN(n3) );
+  INVX4 U10 ( .IN(n1), .QN(n4) );
+  AOI22X2 U11 ( .IN1(A[5]), .IN2(n3), .IN3(B[5]), .IN4(n10), .QN(n8) );
+  INVX4 U12 ( .IN(n8), .QN(n5) );
+  AO22X2 U13 ( .IN1(A[6]), .IN2(n5), .IN3(B[6]), .IN4(n9), .Q(\carry[7] ) );
+  AOI22X2 U14 ( .IN1(A[3]), .IN2(n4), .IN3(B[3]), .IN4(n13), .QN(n11) );
+  INVX4 U15 ( .IN(n11), .QN(n6) );
+  AOI22X2 U16 ( .IN1(B[1]), .IN2(A[1]), .IN3(n16), .IN4(B[0]), .QN(n14) );
+  INVX4 U17 ( .IN(n14), .QN(n7) );
+endmodule
+
+
+module almost_correct_adder_32bit_DW01_add_16 ( A, B, CI, SUM, CO );
+  input [7:0] A;
+  input [7:0] B;
+  output [7:0] SUM;
+  input CI;
+  output CO;
+  wire   \carry[7] , n1, n2, n3, n4, n5, n6, n7, n8, n9, n10, n11, n12, n13,
+         n14, n15, n16;
+
+  XOR3X1 U1_7 ( .IN1(A[7]), .IN2(B[7]), .IN3(\carry[7] ), .Q(SUM[7]) );
+  ISOLORX2 U1 ( .D(n7), .ISO(A[2]), .Q(n15) );
+  ISOLORX2 U2 ( .D(n6), .ISO(A[4]), .Q(n12) );
+  ISOLORX2 U3 ( .D(n3), .ISO(A[5]), .Q(n10) );
+  ISOLORX2 U4 ( .D(n5), .ISO(A[6]), .Q(n9) );
+  AOI22X2 U5 ( .IN1(A[2]), .IN2(n7), .IN3(B[2]), .IN4(n15), .QN(n1) );
+  AOI22X2 U6 ( .IN1(A[4]), .IN2(n6), .IN3(B[4]), .IN4(n12), .QN(n2) );
+  ISOLORX2 U7 ( .D(n4), .ISO(A[3]), .Q(n13) );
+  OA21X2 U8 ( .IN1(A[1]), .IN2(B[1]), .IN3(A[0]), .Q(n16) );
+  INVX4 U9 ( .IN(n2), .QN(n3) );
+  INVX4 U10 ( .IN(n1), .QN(n4) );
+  AOI22X2 U11 ( .IN1(A[5]), .IN2(n3), .IN3(B[5]), .IN4(n10), .QN(n8) );
+  INVX4 U12 ( .IN(n8), .QN(n5) );
+  AO22X2 U13 ( .IN1(A[6]), .IN2(n5), .IN3(B[6]), .IN4(n9), .Q(\carry[7] ) );
+  AOI22X2 U14 ( .IN1(A[3]), .IN2(n4), .IN3(B[3]), .IN4(n13), .QN(n11) );
+  INVX4 U15 ( .IN(n11), .QN(n6) );
+  AOI22X2 U16 ( .IN1(B[1]), .IN2(A[1]), .IN3(n16), .IN4(B[0]), .QN(n14) );
+  INVX4 U17 ( .IN(n14), .QN(n7) );
+endmodule
+
+
+module almost_correct_adder_32bit_DW01_add_17 ( A, B, CI, SUM, CO );
+  input [7:0] A;
+  input [7:0] B;
+  output [7:0] SUM;
+  input CI;
+  output CO;
+  wire   \carry[7] , n1, n2, n3, n4, n5, n6, n7, n8, n9, n10, n11, n12, n13,
+         n14, n15, n16;
+
+  XOR3X1 U1_7 ( .IN1(A[7]), .IN2(B[7]), .IN3(\carry[7] ), .Q(SUM[7]) );
+  ISOLORX2 U1 ( .D(n7), .ISO(A[2]), .Q(n15) );
+  ISOLORX2 U2 ( .D(n6), .ISO(A[4]), .Q(n12) );
+  ISOLORX2 U3 ( .D(n3), .ISO(A[5]), .Q(n10) );
+  ISOLORX2 U4 ( .D(n5), .ISO(A[6]), .Q(n9) );
+  AOI22X2 U5 ( .IN1(A[2]), .IN2(n7), .IN3(B[2]), .IN4(n15), .QN(n1) );
+  AOI22X2 U6 ( .IN1(A[4]), .IN2(n6), .IN3(B[4]), .IN4(n12), .QN(n2) );
+  ISOLORX2 U7 ( .D(n4), .ISO(A[3]), .Q(n13) );
+  OA21X2 U8 ( .IN1(A[1]), .IN2(B[1]), .IN3(A[0]), .Q(n16) );
+  INVX4 U9 ( .IN(n2), .QN(n3) );
+  INVX4 U10 ( .IN(n1), .QN(n4) );
+  AOI22X2 U11 ( .IN1(A[5]), .IN2(n3), .IN3(B[5]), .IN4(n10), .QN(n8) );
+  INVX4 U12 ( .IN(n8), .QN(n5) );
+  AO22X2 U13 ( .IN1(A[6]), .IN2(n5), .IN3(B[6]), .IN4(n9), .Q(\carry[7] ) );
+  AOI22X2 U14 ( .IN1(A[3]), .IN2(n4), .IN3(B[3]), .IN4(n13), .QN(n11) );
+  INVX4 U15 ( .IN(n11), .QN(n6) );
+  AOI22X2 U16 ( .IN1(B[1]), .IN2(A[1]), .IN3(n16), .IN4(B[0]), .QN(n14) );
+  INVX4 U17 ( .IN(n14), .QN(n7) );
+endmodule
+
+
+module almost_correct_adder_32bit_DW01_add_18 ( A, B, CI, SUM, CO );
+  input [7:0] A;
+  input [7:0] B;
+  output [7:0] SUM;
+  input CI;
+  output CO;
+  wire   \carry[7] , n1, n2, n3, n4, n5, n6, n7, n8, n9, n10, n11, n12, n13,
+         n14, n15, n16;
+
+  XOR3X1 U1_7 ( .IN1(A[7]), .IN2(B[7]), .IN3(\carry[7] ), .Q(SUM[7]) );
+  ISOLORX2 U1 ( .D(n7), .ISO(A[2]), .Q(n15) );
+  ISOLORX2 U2 ( .D(n6), .ISO(A[4]), .Q(n12) );
+  ISOLORX2 U3 ( .D(n3), .ISO(A[5]), .Q(n10) );
+  ISOLORX2 U4 ( .D(n5), .ISO(A[6]), .Q(n9) );
+  AOI22X2 U5 ( .IN1(A[2]), .IN2(n7), .IN3(B[2]), .IN4(n15), .QN(n1) );
+  AOI22X2 U6 ( .IN1(A[4]), .IN2(n6), .IN3(B[4]), .IN4(n12), .QN(n2) );
+  ISOLORX2 U7 ( .D(n4), .ISO(A[3]), .Q(n13) );
+  OA21X2 U8 ( .IN1(A[1]), .IN2(B[1]), .IN3(A[0]), .Q(n16) );
+  INVX4 U9 ( .IN(n2), .QN(n3) );
+  INVX4 U10 ( .IN(n1), .QN(n4) );
+  AOI22X2 U11 ( .IN1(A[5]), .IN2(n3), .IN3(B[5]), .IN4(n10), .QN(n8) );
+  INVX4 U12 ( .IN(n8), .QN(n5) );
+  AO22X2 U13 ( .IN1(A[6]), .IN2(n5), .IN3(B[6]), .IN4(n9), .Q(\carry[7] ) );
+  AOI22X2 U14 ( .IN1(A[3]), .IN2(n4), .IN3(B[3]), .IN4(n13), .QN(n11) );
+  INVX4 U15 ( .IN(n11), .QN(n6) );
+  AOI22X2 U16 ( .IN1(B[1]), .IN2(A[1]), .IN3(n16), .IN4(B[0]), .QN(n14) );
+  INVX4 U17 ( .IN(n14), .QN(n7) );
+endmodule
+
+
+module almost_correct_adder_32bit_DW01_add_19 ( A, B, CI, SUM, CO );
+  input [7:0] A;
+  input [7:0] B;
+  output [7:0] SUM;
+  input CI;
+  output CO;
+  wire   \carry[7] , n1, n2, n3, n4, n5, n6, n7, n8, n9, n10, n11, n12, n13,
+         n14, n15, n16;
+
+  XOR3X1 U1_7 ( .IN1(A[7]), .IN2(B[7]), .IN3(\carry[7] ), .Q(SUM[7]) );
+  ISOLORX2 U1 ( .D(n7), .ISO(A[2]), .Q(n15) );
+  ISOLORX2 U2 ( .D(n6), .ISO(A[4]), .Q(n12) );
+  ISOLORX2 U3 ( .D(n3), .ISO(A[5]), .Q(n10) );
+  ISOLORX2 U4 ( .D(n5), .ISO(A[6]), .Q(n9) );
+  AOI22X2 U5 ( .IN1(A[2]), .IN2(n7), .IN3(B[2]), .IN4(n15), .QN(n1) );
+  AOI22X2 U6 ( .IN1(A[4]), .IN2(n6), .IN3(B[4]), .IN4(n12), .QN(n2) );
+  ISOLORX2 U7 ( .D(n4), .ISO(A[3]), .Q(n13) );
+  OA21X2 U8 ( .IN1(A[1]), .IN2(B[1]), .IN3(A[0]), .Q(n16) );
+  INVX4 U9 ( .IN(n2), .QN(n3) );
+  INVX4 U10 ( .IN(n1), .QN(n4) );
+  AOI22X2 U11 ( .IN1(A[5]), .IN2(n3), .IN3(B[5]), .IN4(n10), .QN(n8) );
+  INVX4 U12 ( .IN(n8), .QN(n5) );
+  AO22X2 U13 ( .IN1(A[6]), .IN2(n5), .IN3(B[6]), .IN4(n9), .Q(\carry[7] ) );
+  AOI22X2 U14 ( .IN1(A[3]), .IN2(n4), .IN3(B[3]), .IN4(n13), .QN(n11) );
+  INVX4 U15 ( .IN(n11), .QN(n6) );
+  AOI22X2 U16 ( .IN1(B[1]), .IN2(A[1]), .IN3(n16), .IN4(B[0]), .QN(n14) );
+  INVX4 U17 ( .IN(n14), .QN(n7) );
+endmodule
+
+
+module almost_correct_adder_32bit_DW01_add_20 ( A, B, CI, SUM, CO );
+  input [7:0] A;
+  input [7:0] B;
+  output [7:0] SUM;
+  input CI;
+  output CO;
+  wire   \carry[7] , n1, n2, n3, n4, n5, n6, n7, n8, n9, n10, n11, n12, n13,
+         n14, n15, n16;
+
+  XOR3X1 U1_7 ( .IN1(A[7]), .IN2(B[7]), .IN3(\carry[7] ), .Q(SUM[7]) );
+  ISOLORX2 U1 ( .D(n7), .ISO(A[2]), .Q(n15) );
+  ISOLORX2 U2 ( .D(n6), .ISO(A[4]), .Q(n12) );
+  ISOLORX2 U3 ( .D(n3), .ISO(A[5]), .Q(n10) );
+  ISOLORX2 U4 ( .D(n5), .ISO(A[6]), .Q(n9) );
+  AOI22X2 U5 ( .IN1(A[2]), .IN2(n7), .IN3(B[2]), .IN4(n15), .QN(n1) );
+  AOI22X2 U6 ( .IN1(A[4]), .IN2(n6), .IN3(B[4]), .IN4(n12), .QN(n2) );
+  ISOLORX2 U7 ( .D(n4), .ISO(A[3]), .Q(n13) );
+  OA21X2 U8 ( .IN1(A[1]), .IN2(B[1]), .IN3(A[0]), .Q(n16) );
+  INVX4 U9 ( .IN(n2), .QN(n3) );
+  INVX4 U10 ( .IN(n1), .QN(n4) );
+  AOI22X2 U11 ( .IN1(A[5]), .IN2(n3), .IN3(B[5]), .IN4(n10), .QN(n8) );
+  INVX4 U12 ( .IN(n8), .QN(n5) );
+  AO22X2 U13 ( .IN1(A[6]), .IN2(n5), .IN3(B[6]), .IN4(n9), .Q(\carry[7] ) );
+  AOI22X2 U14 ( .IN1(A[3]), .IN2(n4), .IN3(B[3]), .IN4(n13), .QN(n11) );
+  INVX4 U15 ( .IN(n11), .QN(n6) );
+  AOI22X2 U16 ( .IN1(B[1]), .IN2(A[1]), .IN3(n16), .IN4(B[0]), .QN(n14) );
+  INVX4 U17 ( .IN(n14), .QN(n7) );
+endmodule
+
+
+module almost_correct_adder_32bit_DW01_add_21 ( A, B, CI, SUM, CO );
+  input [7:0] A;
+  input [7:0] B;
+  output [7:0] SUM;
+  input CI;
+  output CO;
+  wire   \carry[7] , n1, n2, n3, n4, n5, n6, n7, n8, n9, n10, n11, n12, n13,
+         n14, n15, n16;
+
+  XOR3X1 U1_7 ( .IN1(A[7]), .IN2(B[7]), .IN3(\carry[7] ), .Q(SUM[7]) );
+  ISOLORX2 U1 ( .D(n7), .ISO(A[2]), .Q(n15) );
+  ISOLORX2 U2 ( .D(n6), .ISO(A[4]), .Q(n12) );
+  ISOLORX2 U3 ( .D(n3), .ISO(A[5]), .Q(n10) );
+  ISOLORX2 U4 ( .D(n5), .ISO(A[6]), .Q(n9) );
+  AOI22X2 U5 ( .IN1(A[2]), .IN2(n7), .IN3(B[2]), .IN4(n15), .QN(n1) );
+  AOI22X2 U6 ( .IN1(A[4]), .IN2(n6), .IN3(B[4]), .IN4(n12), .QN(n2) );
+  ISOLORX2 U7 ( .D(n4), .ISO(A[3]), .Q(n13) );
+  OA21X2 U8 ( .IN1(A[1]), .IN2(B[1]), .IN3(A[0]), .Q(n16) );
+  INVX4 U9 ( .IN(n2), .QN(n3) );
+  INVX4 U10 ( .IN(n1), .QN(n4) );
+  AOI22X2 U11 ( .IN1(A[5]), .IN2(n3), .IN3(B[5]), .IN4(n10), .QN(n8) );
+  INVX4 U12 ( .IN(n8), .QN(n5) );
+  AO22X2 U13 ( .IN1(A[6]), .IN2(n5), .IN3(B[6]), .IN4(n9), .Q(\carry[7] ) );
+  AOI22X2 U14 ( .IN1(A[3]), .IN2(n4), .IN3(B[3]), .IN4(n13), .QN(n11) );
+  INVX4 U15 ( .IN(n11), .QN(n6) );
+  AOI22X2 U16 ( .IN1(B[1]), .IN2(A[1]), .IN3(n16), .IN4(B[0]), .QN(n14) );
+  INVX4 U17 ( .IN(n14), .QN(n7) );
+endmodule
+
+
+module almost_correct_adder_32bit_DW01_add_22 ( A, B, CI, SUM, CO );
+  input [7:0] A;
+  input [7:0] B;
+  output [7:0] SUM;
+  input CI;
+  output CO;
+  wire   \carry[7] , n1, n2, n3, n4, n5, n6, n7, n8, n9, n10, n11, n12, n13,
+         n14, n15, n16;
+
+  XOR3X1 U1_7 ( .IN1(A[7]), .IN2(B[7]), .IN3(\carry[7] ), .Q(SUM[7]) );
+  ISOLORX2 U1 ( .D(n7), .ISO(A[2]), .Q(n15) );
+  ISOLORX2 U2 ( .D(n6), .ISO(A[4]), .Q(n12) );
+  ISOLORX2 U3 ( .D(n3), .ISO(A[5]), .Q(n10) );
+  ISOLORX2 U4 ( .D(n5), .ISO(A[6]), .Q(n9) );
+  AOI22X2 U5 ( .IN1(A[2]), .IN2(n7), .IN3(B[2]), .IN4(n15), .QN(n1) );
+  AOI22X2 U6 ( .IN1(A[4]), .IN2(n6), .IN3(B[4]), .IN4(n12), .QN(n2) );
+  ISOLORX2 U7 ( .D(n4), .ISO(A[3]), .Q(n13) );
+  OA21X2 U8 ( .IN1(A[1]), .IN2(B[1]), .IN3(A[0]), .Q(n16) );
+  INVX4 U9 ( .IN(n2), .QN(n3) );
+  INVX4 U10 ( .IN(n1), .QN(n4) );
+  AOI22X2 U11 ( .IN1(A[5]), .IN2(n3), .IN3(B[5]), .IN4(n10), .QN(n8) );
+  INVX4 U12 ( .IN(n8), .QN(n5) );
+  AO22X2 U13 ( .IN1(A[6]), .IN2(n5), .IN3(B[6]), .IN4(n9), .Q(\carry[7] ) );
+  AOI22X2 U14 ( .IN1(A[3]), .IN2(n4), .IN3(B[3]), .IN4(n13), .QN(n11) );
+  INVX4 U15 ( .IN(n11), .QN(n6) );
+  AOI22X2 U16 ( .IN1(B[1]), .IN2(A[1]), .IN3(n16), .IN4(B[0]), .QN(n14) );
+  INVX4 U17 ( .IN(n14), .QN(n7) );
+endmodule
+
+
+module almost_correct_adder_32bit_DW01_add_23 ( A, B, CI, SUM, CO );
+  input [7:0] A;
+  input [7:0] B;
+  output [7:0] SUM;
+  input CI;
+  output CO;
+  wire   \carry[7] , n1, n2, n3, n4, n5, n6, n7, n8, n9, n10, n11, n12, n13,
+         n14, n15, n16;
+
+  XOR3X1 U1_7 ( .IN1(A[7]), .IN2(B[7]), .IN3(\carry[7] ), .Q(SUM[7]) );
+  ISOLORX2 U1 ( .D(n7), .ISO(A[2]), .Q(n15) );
+  ISOLORX2 U2 ( .D(n6), .ISO(A[4]), .Q(n12) );
+  ISOLORX2 U3 ( .D(n3), .ISO(A[5]), .Q(n10) );
+  ISOLORX2 U4 ( .D(n5), .ISO(A[6]), .Q(n9) );
+  AOI22X2 U5 ( .IN1(A[2]), .IN2(n7), .IN3(B[2]), .IN4(n15), .QN(n1) );
+  AOI22X2 U6 ( .IN1(A[4]), .IN2(n6), .IN3(B[4]), .IN4(n12), .QN(n2) );
+  ISOLORX2 U7 ( .D(n4), .ISO(A[3]), .Q(n13) );
+  OA21X2 U8 ( .IN1(A[1]), .IN2(B[1]), .IN3(A[0]), .Q(n16) );
+  INVX4 U9 ( .IN(n2), .QN(n3) );
+  INVX4 U10 ( .IN(n1), .QN(n4) );
+  AOI22X2 U11 ( .IN1(A[5]), .IN2(n3), .IN3(B[5]), .IN4(n10), .QN(n8) );
+  INVX4 U12 ( .IN(n8), .QN(n5) );
+  AO22X2 U13 ( .IN1(A[6]), .IN2(n5), .IN3(B[6]), .IN4(n9), .Q(\carry[7] ) );
+  AOI22X2 U14 ( .IN1(A[3]), .IN2(n4), .IN3(B[3]), .IN4(n13), .QN(n11) );
+  INVX4 U15 ( .IN(n11), .QN(n6) );
+  AOI22X2 U16 ( .IN1(B[1]), .IN2(A[1]), .IN3(n16), .IN4(B[0]), .QN(n14) );
+  INVX4 U17 ( .IN(n14), .QN(n7) );
+endmodule
+
+
+module almost_correct_adder_32bit_DW01_add_24 ( A, B, CI, SUM, CO );
+  input [7:0] A;
+  input [7:0] B;
+  output [7:0] SUM;
+  input CI;
+  output CO;
+
+  wire   [7:1] carry;
+
+  XOR3X1 U1_7 ( .IN1(A[7]), .IN2(B[7]), .IN3(carry[7]), .Q(SUM[7]) );
+  FADDX1 U1_2 ( .A(A[2]), .B(B[2]), .CI(carry[2]), .CO(carry[3]), .S(SUM[2])
+         );
+  FADDX1 U1_3 ( .A(A[3]), .B(B[3]), .CI(carry[3]), .CO(carry[4]), .S(SUM[3])
+         );
+  FADDX1 U1_4 ( .A(A[4]), .B(B[4]), .CI(carry[4]), .CO(carry[5]), .S(SUM[4])
+         );
+  FADDX1 U1_5 ( .A(A[5]), .B(B[5]), .CI(carry[5]), .CO(carry[6]), .S(SUM[5])
+         );
+  FADDX1 U1_6 ( .A(A[6]), .B(B[6]), .CI(carry[6]), .CO(carry[7]), .S(SUM[6])
+         );
+  FADDX1 U1_1 ( .A(A[1]), .B(B[1]), .CI(carry[1]), .CO(carry[2]), .S(SUM[1])
+         );
+  AND2X1 U1 ( .IN1(A[0]), .IN2(B[0]), .Q(carry[1]) );
+  XOR2X1 U2 ( .IN1(B[0]), .IN2(A[0]), .Q(SUM[0]) );
+endmodule
+
+
+module almost_correct_adder_32bit ( clk, A, B, Cout, S );
+  input [31:0] A;
+  input [31:0] B;
+  output [31:0] S;
+  input clk;
+  output Cout;
+  wire   N0, N1, N2, N3, N4, N5, N6, N7, N8, N9, N10, N11, N12, N13, N14, N15,
+         N16, N17, N18, N19, N20, N21, N22, N23, N24, N25, N26, N27, N28, N29,
+         N30, N31, N32, n92, n93, n94, n95, n96, n97, n98, n99, n100, n101,
+         n102, n103, n104, n105, n106, n107, n108, n109, n110, n111, n112,
+         n113, n114, n115, n116, n117, n118, n119, n120, n121, n122, n123,
+         n124, n125, n126, n127, n128, n129, n130, n131, n132, n133, n134,
+         n135, n136, n137, n138, n139, n140, n141, n142, n143, n144, n145,
+         n146, n147, n148, n149, n150, n151, n152, n153, n154, n155, n156,
+         n157;
+  wire   SYNOPSYS_UNCONNECTED__0, SYNOPSYS_UNCONNECTED__1, 
+        SYNOPSYS_UNCONNECTED__2, SYNOPSYS_UNCONNECTED__3, 
+        SYNOPSYS_UNCONNECTED__4, SYNOPSYS_UNCONNECTED__5, 
+        SYNOPSYS_UNCONNECTED__6, SYNOPSYS_UNCONNECTED__7, 
+        SYNOPSYS_UNCONNECTED__8, SYNOPSYS_UNCONNECTED__9, 
+        SYNOPSYS_UNCONNECTED__10, SYNOPSYS_UNCONNECTED__11, 
+        SYNOPSYS_UNCONNECTED__12, SYNOPSYS_UNCONNECTED__13, 
+        SYNOPSYS_UNCONNECTED__14, SYNOPSYS_UNCONNECTED__15, 
+        SYNOPSYS_UNCONNECTED__16, SYNOPSYS_UNCONNECTED__17, 
+        SYNOPSYS_UNCONNECTED__18, SYNOPSYS_UNCONNECTED__19, 
+        SYNOPSYS_UNCONNECTED__20, SYNOPSYS_UNCONNECTED__21, 
+        SYNOPSYS_UNCONNECTED__22, SYNOPSYS_UNCONNECTED__23, 
+        SYNOPSYS_UNCONNECTED__24, SYNOPSYS_UNCONNECTED__25, 
+        SYNOPSYS_UNCONNECTED__26, SYNOPSYS_UNCONNECTED__27, 
+        SYNOPSYS_UNCONNECTED__28, SYNOPSYS_UNCONNECTED__29, 
+        SYNOPSYS_UNCONNECTED__30, SYNOPSYS_UNCONNECTED__31, 
+        SYNOPSYS_UNCONNECTED__32, SYNOPSYS_UNCONNECTED__33, 
+        SYNOPSYS_UNCONNECTED__34, SYNOPSYS_UNCONNECTED__35, 
+        SYNOPSYS_UNCONNECTED__36, SYNOPSYS_UNCONNECTED__37, 
+        SYNOPSYS_UNCONNECTED__38, SYNOPSYS_UNCONNECTED__39, 
+        SYNOPSYS_UNCONNECTED__40, SYNOPSYS_UNCONNECTED__41, 
+        SYNOPSYS_UNCONNECTED__42, SYNOPSYS_UNCONNECTED__43, 
+        SYNOPSYS_UNCONNECTED__44, SYNOPSYS_UNCONNECTED__45, 
+        SYNOPSYS_UNCONNECTED__46, SYNOPSYS_UNCONNECTED__47, 
+        SYNOPSYS_UNCONNECTED__48, SYNOPSYS_UNCONNECTED__49, 
+        SYNOPSYS_UNCONNECTED__50, SYNOPSYS_UNCONNECTED__51, 
+        SYNOPSYS_UNCONNECTED__52, SYNOPSYS_UNCONNECTED__53, 
+        SYNOPSYS_UNCONNECTED__54, SYNOPSYS_UNCONNECTED__55, 
+        SYNOPSYS_UNCONNECTED__56, SYNOPSYS_UNCONNECTED__57, 
+        SYNOPSYS_UNCONNECTED__58, SYNOPSYS_UNCONNECTED__59, 
+        SYNOPSYS_UNCONNECTED__60, SYNOPSYS_UNCONNECTED__61, 
+        SYNOPSYS_UNCONNECTED__62, SYNOPSYS_UNCONNECTED__63, 
+        SYNOPSYS_UNCONNECTED__64, SYNOPSYS_UNCONNECTED__65, 
+        SYNOPSYS_UNCONNECTED__66, SYNOPSYS_UNCONNECTED__67, 
+        SYNOPSYS_UNCONNECTED__68, SYNOPSYS_UNCONNECTED__69, 
+        SYNOPSYS_UNCONNECTED__70, SYNOPSYS_UNCONNECTED__71, 
+        SYNOPSYS_UNCONNECTED__72, SYNOPSYS_UNCONNECTED__73, 
+        SYNOPSYS_UNCONNECTED__74, SYNOPSYS_UNCONNECTED__75, 
+        SYNOPSYS_UNCONNECTED__76, SYNOPSYS_UNCONNECTED__77, 
+        SYNOPSYS_UNCONNECTED__78, SYNOPSYS_UNCONNECTED__79, 
+        SYNOPSYS_UNCONNECTED__80, SYNOPSYS_UNCONNECTED__81, 
+        SYNOPSYS_UNCONNECTED__82, SYNOPSYS_UNCONNECTED__83, 
+        SYNOPSYS_UNCONNECTED__84, SYNOPSYS_UNCONNECTED__85, 
+        SYNOPSYS_UNCONNECTED__86, SYNOPSYS_UNCONNECTED__87, 
+        SYNOPSYS_UNCONNECTED__88, SYNOPSYS_UNCONNECTED__89, 
+        SYNOPSYS_UNCONNECTED__90, SYNOPSYS_UNCONNECTED__91, 
+        SYNOPSYS_UNCONNECTED__92, SYNOPSYS_UNCONNECTED__93, 
+        SYNOPSYS_UNCONNECTED__94, SYNOPSYS_UNCONNECTED__95, 
+        SYNOPSYS_UNCONNECTED__96, SYNOPSYS_UNCONNECTED__97, 
+        SYNOPSYS_UNCONNECTED__98, SYNOPSYS_UNCONNECTED__99, 
+        SYNOPSYS_UNCONNECTED__100, SYNOPSYS_UNCONNECTED__101, 
+        SYNOPSYS_UNCONNECTED__102, SYNOPSYS_UNCONNECTED__103, 
+        SYNOPSYS_UNCONNECTED__104, SYNOPSYS_UNCONNECTED__105, 
+        SYNOPSYS_UNCONNECTED__106, SYNOPSYS_UNCONNECTED__107, 
+        SYNOPSYS_UNCONNECTED__108, SYNOPSYS_UNCONNECTED__109, 
+        SYNOPSYS_UNCONNECTED__110, SYNOPSYS_UNCONNECTED__111, 
+        SYNOPSYS_UNCONNECTED__112, SYNOPSYS_UNCONNECTED__113, 
+        SYNOPSYS_UNCONNECTED__114, SYNOPSYS_UNCONNECTED__115, 
+        SYNOPSYS_UNCONNECTED__116, SYNOPSYS_UNCONNECTED__117, 
+        SYNOPSYS_UNCONNECTED__118, SYNOPSYS_UNCONNECTED__119, 
+        SYNOPSYS_UNCONNECTED__120, SYNOPSYS_UNCONNECTED__121, 
+        SYNOPSYS_UNCONNECTED__122, SYNOPSYS_UNCONNECTED__123, 
+        SYNOPSYS_UNCONNECTED__124, SYNOPSYS_UNCONNECTED__125, 
+        SYNOPSYS_UNCONNECTED__126, SYNOPSYS_UNCONNECTED__127, 
+        SYNOPSYS_UNCONNECTED__128, SYNOPSYS_UNCONNECTED__129, 
+        SYNOPSYS_UNCONNECTED__130, SYNOPSYS_UNCONNECTED__131, 
+        SYNOPSYS_UNCONNECTED__132, SYNOPSYS_UNCONNECTED__133, 
+        SYNOPSYS_UNCONNECTED__134, SYNOPSYS_UNCONNECTED__135, 
+        SYNOPSYS_UNCONNECTED__136, SYNOPSYS_UNCONNECTED__137, 
+        SYNOPSYS_UNCONNECTED__138, SYNOPSYS_UNCONNECTED__139, 
+        SYNOPSYS_UNCONNECTED__140, SYNOPSYS_UNCONNECTED__141, 
+        SYNOPSYS_UNCONNECTED__142, SYNOPSYS_UNCONNECTED__143, 
+        SYNOPSYS_UNCONNECTED__144, SYNOPSYS_UNCONNECTED__145, 
+        SYNOPSYS_UNCONNECTED__146, SYNOPSYS_UNCONNECTED__147, 
+        SYNOPSYS_UNCONNECTED__148, SYNOPSYS_UNCONNECTED__149, 
+        SYNOPSYS_UNCONNECTED__150, SYNOPSYS_UNCONNECTED__151, 
+        SYNOPSYS_UNCONNECTED__152, SYNOPSYS_UNCONNECTED__153, 
+        SYNOPSYS_UNCONNECTED__154, SYNOPSYS_UNCONNECTED__155, 
+        SYNOPSYS_UNCONNECTED__156, SYNOPSYS_UNCONNECTED__157, 
+        SYNOPSYS_UNCONNECTED__158, SYNOPSYS_UNCONNECTED__159, 
+        SYNOPSYS_UNCONNECTED__160, SYNOPSYS_UNCONNECTED__161, 
+        SYNOPSYS_UNCONNECTED__162, SYNOPSYS_UNCONNECTED__163, 
+        SYNOPSYS_UNCONNECTED__164, SYNOPSYS_UNCONNECTED__165, 
+        SYNOPSYS_UNCONNECTED__166, SYNOPSYS_UNCONNECTED__167;
+
+  almost_correct_adder_32bit_DW01_add_0 add_62 ( .A({1'b0, A[31:24]}), .B({
+        1'b0, B[31:24]}), .CI(1'b0), .SUM({N32, N31, SYNOPSYS_UNCONNECTED__0, 
+        SYNOPSYS_UNCONNECTED__1, SYNOPSYS_UNCONNECTED__2, 
+        SYNOPSYS_UNCONNECTED__3, SYNOPSYS_UNCONNECTED__4, 
+        SYNOPSYS_UNCONNECTED__5, SYNOPSYS_UNCONNECTED__6}) );
+  almost_correct_adder_32bit_DW01_add_1 add_61 ( .A(A[30:23]), .B(B[30:23]), 
+        .CI(1'b0), .SUM({N30, SYNOPSYS_UNCONNECTED__7, SYNOPSYS_UNCONNECTED__8, 
+        SYNOPSYS_UNCONNECTED__9, SYNOPSYS_UNCONNECTED__10, 
+        SYNOPSYS_UNCONNECTED__11, SYNOPSYS_UNCONNECTED__12, 
+        SYNOPSYS_UNCONNECTED__13}) );
+  almost_correct_adder_32bit_DW01_add_2 add_60 ( .A(A[29:22]), .B(B[29:22]), 
+        .CI(1'b0), .SUM({N29, SYNOPSYS_UNCONNECTED__14, 
+        SYNOPSYS_UNCONNECTED__15, SYNOPSYS_UNCONNECTED__16, 
+        SYNOPSYS_UNCONNECTED__17, SYNOPSYS_UNCONNECTED__18, 
+        SYNOPSYS_UNCONNECTED__19, SYNOPSYS_UNCONNECTED__20}) );
+  almost_correct_adder_32bit_DW01_add_3 add_59 ( .A(A[28:21]), .B(B[28:21]), 
+        .CI(1'b0), .SUM({N28, SYNOPSYS_UNCONNECTED__21, 
+        SYNOPSYS_UNCONNECTED__22, SYNOPSYS_UNCONNECTED__23, 
+        SYNOPSYS_UNCONNECTED__24, SYNOPSYS_UNCONNECTED__25, 
+        SYNOPSYS_UNCONNECTED__26, SYNOPSYS_UNCONNECTED__27}) );
+  almost_correct_adder_32bit_DW01_add_4 add_58 ( .A(A[27:20]), .B(B[27:20]), 
+        .CI(1'b0), .SUM({N27, SYNOPSYS_UNCONNECTED__28, 
+        SYNOPSYS_UNCONNECTED__29, SYNOPSYS_UNCONNECTED__30, 
+        SYNOPSYS_UNCONNECTED__31, SYNOPSYS_UNCONNECTED__32, 
+        SYNOPSYS_UNCONNECTED__33, SYNOPSYS_UNCONNECTED__34}) );
+  almost_correct_adder_32bit_DW01_add_5 add_57 ( .A(A[26:19]), .B(B[26:19]), 
+        .CI(1'b0), .SUM({N26, SYNOPSYS_UNCONNECTED__35, 
+        SYNOPSYS_UNCONNECTED__36, SYNOPSYS_UNCONNECTED__37, 
+        SYNOPSYS_UNCONNECTED__38, SYNOPSYS_UNCONNECTED__39, 
+        SYNOPSYS_UNCONNECTED__40, SYNOPSYS_UNCONNECTED__41}) );
+  almost_correct_adder_32bit_DW01_add_6 add_56 ( .A(A[25:18]), .B(B[25:18]), 
+        .CI(1'b0), .SUM({N25, SYNOPSYS_UNCONNECTED__42, 
+        SYNOPSYS_UNCONNECTED__43, SYNOPSYS_UNCONNECTED__44, 
+        SYNOPSYS_UNCONNECTED__45, SYNOPSYS_UNCONNECTED__46, 
+        SYNOPSYS_UNCONNECTED__47, SYNOPSYS_UNCONNECTED__48}) );
+  almost_correct_adder_32bit_DW01_add_7 add_55 ( .A(A[24:17]), .B(B[24:17]), 
+        .CI(1'b0), .SUM({N24, SYNOPSYS_UNCONNECTED__49, 
+        SYNOPSYS_UNCONNECTED__50, SYNOPSYS_UNCONNECTED__51, 
+        SYNOPSYS_UNCONNECTED__52, SYNOPSYS_UNCONNECTED__53, 
+        SYNOPSYS_UNCONNECTED__54, SYNOPSYS_UNCONNECTED__55}) );
+  almost_correct_adder_32bit_DW01_add_8 add_54 ( .A(A[23:16]), .B(B[23:16]), 
+        .CI(1'b0), .SUM({N23, SYNOPSYS_UNCONNECTED__56, 
+        SYNOPSYS_UNCONNECTED__57, SYNOPSYS_UNCONNECTED__58, 
+        SYNOPSYS_UNCONNECTED__59, SYNOPSYS_UNCONNECTED__60, 
+        SYNOPSYS_UNCONNECTED__61, SYNOPSYS_UNCONNECTED__62}) );
+  almost_correct_adder_32bit_DW01_add_9 add_53 ( .A(A[22:15]), .B(B[22:15]), 
+        .CI(1'b0), .SUM({N22, SYNOPSYS_UNCONNECTED__63, 
+        SYNOPSYS_UNCONNECTED__64, SYNOPSYS_UNCONNECTED__65, 
+        SYNOPSYS_UNCONNECTED__66, SYNOPSYS_UNCONNECTED__67, 
+        SYNOPSYS_UNCONNECTED__68, SYNOPSYS_UNCONNECTED__69}) );
+  almost_correct_adder_32bit_DW01_add_10 add_52 ( .A(A[21:14]), .B(B[21:14]), 
+        .CI(1'b0), .SUM({N21, SYNOPSYS_UNCONNECTED__70, 
+        SYNOPSYS_UNCONNECTED__71, SYNOPSYS_UNCONNECTED__72, 
+        SYNOPSYS_UNCONNECTED__73, SYNOPSYS_UNCONNECTED__74, 
+        SYNOPSYS_UNCONNECTED__75, SYNOPSYS_UNCONNECTED__76}) );
+  almost_correct_adder_32bit_DW01_add_11 add_51 ( .A(A[20:13]), .B(B[20:13]), 
+        .CI(1'b0), .SUM({N20, SYNOPSYS_UNCONNECTED__77, 
+        SYNOPSYS_UNCONNECTED__78, SYNOPSYS_UNCONNECTED__79, 
+        SYNOPSYS_UNCONNECTED__80, SYNOPSYS_UNCONNECTED__81, 
+        SYNOPSYS_UNCONNECTED__82, SYNOPSYS_UNCONNECTED__83}) );
+  almost_correct_adder_32bit_DW01_add_12 add_50 ( .A(A[19:12]), .B(B[19:12]), 
+        .CI(1'b0), .SUM({N19, SYNOPSYS_UNCONNECTED__84, 
+        SYNOPSYS_UNCONNECTED__85, SYNOPSYS_UNCONNECTED__86, 
+        SYNOPSYS_UNCONNECTED__87, SYNOPSYS_UNCONNECTED__88, 
+        SYNOPSYS_UNCONNECTED__89, SYNOPSYS_UNCONNECTED__90}) );
+  almost_correct_adder_32bit_DW01_add_13 add_49 ( .A(A[18:11]), .B(B[18:11]), 
+        .CI(1'b0), .SUM({N18, SYNOPSYS_UNCONNECTED__91, 
+        SYNOPSYS_UNCONNECTED__92, SYNOPSYS_UNCONNECTED__93, 
+        SYNOPSYS_UNCONNECTED__94, SYNOPSYS_UNCONNECTED__95, 
+        SYNOPSYS_UNCONNECTED__96, SYNOPSYS_UNCONNECTED__97}) );
+  almost_correct_adder_32bit_DW01_add_14 add_48 ( .A(A[17:10]), .B(B[17:10]), 
+        .CI(1'b0), .SUM({N17, SYNOPSYS_UNCONNECTED__98, 
+        SYNOPSYS_UNCONNECTED__99, SYNOPSYS_UNCONNECTED__100, 
+        SYNOPSYS_UNCONNECTED__101, SYNOPSYS_UNCONNECTED__102, 
+        SYNOPSYS_UNCONNECTED__103, SYNOPSYS_UNCONNECTED__104}) );
+  almost_correct_adder_32bit_DW01_add_15 add_47 ( .A(A[16:9]), .B(B[16:9]), 
+        .CI(1'b0), .SUM({N16, SYNOPSYS_UNCONNECTED__105, 
+        SYNOPSYS_UNCONNECTED__106, SYNOPSYS_UNCONNECTED__107, 
+        SYNOPSYS_UNCONNECTED__108, SYNOPSYS_UNCONNECTED__109, 
+        SYNOPSYS_UNCONNECTED__110, SYNOPSYS_UNCONNECTED__111}) );
+  almost_correct_adder_32bit_DW01_add_16 add_46 ( .A(A[15:8]), .B(B[15:8]), 
+        .CI(1'b0), .SUM({N15, SYNOPSYS_UNCONNECTED__112, 
+        SYNOPSYS_UNCONNECTED__113, SYNOPSYS_UNCONNECTED__114, 
+        SYNOPSYS_UNCONNECTED__115, SYNOPSYS_UNCONNECTED__116, 
+        SYNOPSYS_UNCONNECTED__117, SYNOPSYS_UNCONNECTED__118}) );
+  almost_correct_adder_32bit_DW01_add_17 add_45 ( .A(A[14:7]), .B(B[14:7]), 
+        .CI(1'b0), .SUM({N14, SYNOPSYS_UNCONNECTED__119, 
+        SYNOPSYS_UNCONNECTED__120, SYNOPSYS_UNCONNECTED__121, 
+        SYNOPSYS_UNCONNECTED__122, SYNOPSYS_UNCONNECTED__123, 
+        SYNOPSYS_UNCONNECTED__124, SYNOPSYS_UNCONNECTED__125}) );
+  almost_correct_adder_32bit_DW01_add_18 add_44 ( .A(A[13:6]), .B(B[13:6]), 
+        .CI(1'b0), .SUM({N13, SYNOPSYS_UNCONNECTED__126, 
+        SYNOPSYS_UNCONNECTED__127, SYNOPSYS_UNCONNECTED__128, 
+        SYNOPSYS_UNCONNECTED__129, SYNOPSYS_UNCONNECTED__130, 
+        SYNOPSYS_UNCONNECTED__131, SYNOPSYS_UNCONNECTED__132}) );
+  almost_correct_adder_32bit_DW01_add_19 add_43 ( .A(A[12:5]), .B(B[12:5]), 
+        .CI(1'b0), .SUM({N12, SYNOPSYS_UNCONNECTED__133, 
+        SYNOPSYS_UNCONNECTED__134, SYNOPSYS_UNCONNECTED__135, 
+        SYNOPSYS_UNCONNECTED__136, SYNOPSYS_UNCONNECTED__137, 
+        SYNOPSYS_UNCONNECTED__138, SYNOPSYS_UNCONNECTED__139}) );
+  almost_correct_adder_32bit_DW01_add_20 add_42 ( .A(A[11:4]), .B(B[11:4]), 
+        .CI(1'b0), .SUM({N11, SYNOPSYS_UNCONNECTED__140, 
+        SYNOPSYS_UNCONNECTED__141, SYNOPSYS_UNCONNECTED__142, 
+        SYNOPSYS_UNCONNECTED__143, SYNOPSYS_UNCONNECTED__144, 
+        SYNOPSYS_UNCONNECTED__145, SYNOPSYS_UNCONNECTED__146}) );
+  almost_correct_adder_32bit_DW01_add_21 add_41 ( .A(A[10:3]), .B(B[10:3]), 
+        .CI(1'b0), .SUM({N10, SYNOPSYS_UNCONNECTED__147, 
+        SYNOPSYS_UNCONNECTED__148, SYNOPSYS_UNCONNECTED__149, 
+        SYNOPSYS_UNCONNECTED__150, SYNOPSYS_UNCONNECTED__151, 
+        SYNOPSYS_UNCONNECTED__152, SYNOPSYS_UNCONNECTED__153}) );
+  almost_correct_adder_32bit_DW01_add_22 add_40 ( .A(A[9:2]), .B(B[9:2]), .CI(
+        1'b0), .SUM({N9, SYNOPSYS_UNCONNECTED__154, SYNOPSYS_UNCONNECTED__155, 
+        SYNOPSYS_UNCONNECTED__156, SYNOPSYS_UNCONNECTED__157, 
+        SYNOPSYS_UNCONNECTED__158, SYNOPSYS_UNCONNECTED__159, 
+        SYNOPSYS_UNCONNECTED__160}) );
+  almost_correct_adder_32bit_DW01_add_23 add_39 ( .A(A[8:1]), .B(B[8:1]), .CI(
+        1'b0), .SUM({N8, SYNOPSYS_UNCONNECTED__161, SYNOPSYS_UNCONNECTED__162, 
+        SYNOPSYS_UNCONNECTED__163, SYNOPSYS_UNCONNECTED__164, 
+        SYNOPSYS_UNCONNECTED__165, SYNOPSYS_UNCONNECTED__166, 
+        SYNOPSYS_UNCONNECTED__167}) );
+  almost_correct_adder_32bit_DW01_add_24 add_38 ( .A(A[7:0]), .B(B[7:0]), .CI(
+        1'b0), .SUM({N7, N6, N5, N4, N3, N2, N1, N0}) );
+  SDFFX1 \temp24_reg[7]  ( .D(N30), .SI(1'b0), .SE(1'b0), .CLK(clk), .QN(n156)
+         );
+  SDFFX1 \temp23_reg[7]  ( .D(N29), .SI(1'b0), .SE(1'b0), .CLK(clk), .QN(n154)
+         );
+  SDFFX1 \temp22_reg[7]  ( .D(N28), .SI(1'b0), .SE(1'b0), .CLK(clk), .QN(n152)
+         );
+  SDFFX1 \temp21_reg[7]  ( .D(N27), .SI(1'b0), .SE(1'b0), .CLK(clk), .QN(n150)
+         );
+  SDFFX1 \temp20_reg[7]  ( .D(N26), .SI(1'b0), .SE(1'b0), .CLK(clk), .QN(n148)
+         );
+  SDFFX1 \temp19_reg[7]  ( .D(N25), .SI(1'b0), .SE(1'b0), .CLK(clk), .QN(n146)
+         );
+  SDFFX1 \temp18_reg[7]  ( .D(N24), .SI(1'b0), .SE(1'b0), .CLK(clk), .QN(n144)
+         );
+  SDFFX1 \temp17_reg[7]  ( .D(N23), .SI(1'b0), .SE(1'b0), .CLK(clk), .QN(n142)
+         );
+  SDFFX1 \temp16_reg[7]  ( .D(N22), .SI(1'b0), .SE(1'b0), .CLK(clk), .QN(n140)
+         );
+  SDFFX1 \temp15_reg[7]  ( .D(N21), .SI(1'b0), .SE(1'b0), .CLK(clk), .QN(n138)
+         );
+  SDFFX1 \temp14_reg[7]  ( .D(N20), .SI(1'b0), .SE(1'b0), .CLK(clk), .QN(n136)
+         );
+  SDFFX1 \temp13_reg[7]  ( .D(N19), .SI(1'b0), .SE(1'b0), .CLK(clk), .QN(n134)
+         );
+  SDFFX1 \temp12_reg[7]  ( .D(N18), .SI(1'b0), .SE(1'b0), .CLK(clk), .QN(n132)
+         );
+  SDFFX1 \temp11_reg[7]  ( .D(N17), .SI(1'b0), .SE(1'b0), .CLK(clk), .QN(n130)
+         );
+  SDFFX1 \temp10_reg[7]  ( .D(N16), .SI(1'b0), .SE(1'b0), .CLK(clk), .QN(n128)
+         );
+  SDFFX1 \temp9_reg[7]  ( .D(N15), .SI(1'b0), .SE(1'b0), .CLK(clk), .QN(n126)
+         );
+  SDFFX1 \temp8_reg[7]  ( .D(N14), .SI(1'b0), .SE(1'b0), .CLK(clk), .QN(n124)
+         );
+  SDFFX1 \temp7_reg[7]  ( .D(N13), .SI(1'b0), .SE(1'b0), .CLK(clk), .QN(n122)
+         );
+  SDFFX1 \temp6_reg[7]  ( .D(N12), .SI(1'b0), .SE(1'b0), .CLK(clk), .QN(n120)
+         );
+  SDFFX1 \temp5_reg[7]  ( .D(N11), .SI(1'b0), .SE(1'b0), .CLK(clk), .QN(n118)
+         );
+  SDFFX1 \temp4_reg[7]  ( .D(N10), .SI(1'b0), .SE(1'b0), .CLK(clk), .QN(n116)
+         );
+  SDFFX1 \temp3_reg[7]  ( .D(N9), .SI(1'b0), .SE(1'b0), .CLK(clk), .QN(n114)
+         );
+  SDFFX1 \temp2_reg[7]  ( .D(N8), .SI(1'b0), .SE(1'b0), .CLK(clk), .QN(n112)
+         );
+  SDFFX1 \temp1_reg[0]  ( .D(N0), .SI(1'b0), .SE(1'b0), .CLK(clk), .QN(n110)
+         );
+  SDFFX1 \temp1_reg[1]  ( .D(N1), .SI(1'b0), .SE(1'b0), .CLK(clk), .QN(n108)
+         );
+  SDFFX1 \temp1_reg[2]  ( .D(N2), .SI(1'b0), .SE(1'b0), .CLK(clk), .QN(n106)
+         );
+  SDFFX1 \temp1_reg[3]  ( .D(N3), .SI(1'b0), .SE(1'b0), .CLK(clk), .QN(n104)
+         );
+  SDFFX1 \temp1_reg[4]  ( .D(N4), .SI(1'b0), .SE(1'b0), .CLK(clk), .QN(n102)
+         );
+  SDFFX1 \temp1_reg[5]  ( .D(N5), .SI(1'b0), .SE(1'b0), .CLK(clk), .QN(n100)
+         );
+  SDFFX1 \temp1_reg[6]  ( .D(N6), .SI(1'b0), .SE(1'b0), .CLK(clk), .QN(n98) );
+  SDFFX1 \temp1_reg[7]  ( .D(N7), .SI(1'b0), .SE(1'b0), .CLK(clk), .QN(n96) );
+  SDFFX1 \temp25_reg[7]  ( .D(N31), .SI(1'b0), .SE(1'b0), .CLK(clk), .QN(n94)
+         );
+  SDFFX1 \temp25_reg[8]  ( .D(N32), .SI(1'b0), .SE(1'b0), .CLK(clk), .QN(n92)
+         );
+  SDFFX1 Cout_reg ( .D(n93), .SI(1'b0), .SE(1'b0), .CLK(clk), .Q(Cout) );
+  SDFFX1 \S_reg[31]  ( .D(n95), .SI(1'b0), .SE(1'b0), .CLK(clk), .Q(S[31]) );
+  SDFFX1 \S_reg[7]  ( .D(n97), .SI(1'b0), .SE(1'b0), .CLK(clk), .Q(S[7]) );
+  SDFFX1 \S_reg[6]  ( .D(n99), .SI(1'b0), .SE(1'b0), .CLK(clk), .Q(S[6]) );
+  SDFFX1 \S_reg[5]  ( .D(n101), .SI(1'b0), .SE(1'b0), .CLK(clk), .Q(S[5]) );
+  SDFFX1 \S_reg[4]  ( .D(n103), .SI(1'b0), .SE(1'b0), .CLK(clk), .Q(S[4]) );
+  SDFFX1 \S_reg[3]  ( .D(n105), .SI(1'b0), .SE(1'b0), .CLK(clk), .Q(S[3]) );
+  SDFFX1 \S_reg[2]  ( .D(n107), .SI(1'b0), .SE(1'b0), .CLK(clk), .Q(S[2]) );
+  SDFFX1 \S_reg[1]  ( .D(n109), .SI(1'b0), .SE(1'b0), .CLK(clk), .Q(S[1]) );
+  SDFFX1 \S_reg[0]  ( .D(n111), .SI(1'b0), .SE(1'b0), .CLK(clk), .Q(S[0]) );
+  SDFFX1 \S_reg[8]  ( .D(n113), .SI(1'b0), .SE(1'b0), .CLK(clk), .Q(S[8]) );
+  SDFFX1 \S_reg[9]  ( .D(n115), .SI(1'b0), .SE(1'b0), .CLK(clk), .Q(S[9]) );
+  SDFFX1 \S_reg[10]  ( .D(n117), .SI(1'b0), .SE(1'b0), .CLK(clk), .Q(S[10]) );
+  SDFFX1 \S_reg[11]  ( .D(n119), .SI(1'b0), .SE(1'b0), .CLK(clk), .Q(S[11]) );
+  SDFFX1 \S_reg[12]  ( .D(n121), .SI(1'b0), .SE(1'b0), .CLK(clk), .Q(S[12]) );
+  SDFFX1 \S_reg[13]  ( .D(n123), .SI(1'b0), .SE(1'b0), .CLK(clk), .Q(S[13]) );
+  SDFFX1 \S_reg[14]  ( .D(n125), .SI(1'b0), .SE(1'b0), .CLK(clk), .Q(S[14]) );
+  SDFFX1 \S_reg[15]  ( .D(n127), .SI(1'b0), .SE(1'b0), .CLK(clk), .Q(S[15]) );
+  SDFFX1 \S_reg[16]  ( .D(n129), .SI(1'b0), .SE(1'b0), .CLK(clk), .Q(S[16]) );
+  SDFFX1 \S_reg[17]  ( .D(n131), .SI(1'b0), .SE(1'b0), .CLK(clk), .Q(S[17]) );
+  SDFFX1 \S_reg[18]  ( .D(n133), .SI(1'b0), .SE(1'b0), .CLK(clk), .Q(S[18]) );
+  SDFFX1 \S_reg[19]  ( .D(n135), .SI(1'b0), .SE(1'b0), .CLK(clk), .Q(S[19]) );
+  SDFFX1 \S_reg[20]  ( .D(n137), .SI(1'b0), .SE(1'b0), .CLK(clk), .Q(S[20]) );
+  SDFFX1 \S_reg[21]  ( .D(n139), .SI(1'b0), .SE(1'b0), .CLK(clk), .Q(S[21]) );
+  SDFFX1 \S_reg[22]  ( .D(n141), .SI(1'b0), .SE(1'b0), .CLK(clk), .Q(S[22]) );
+  SDFFX1 \S_reg[23]  ( .D(n143), .SI(1'b0), .SE(1'b0), .CLK(clk), .Q(S[23]) );
+  SDFFX1 \S_reg[24]  ( .D(n145), .SI(1'b0), .SE(1'b0), .CLK(clk), .Q(S[24]) );
+  SDFFX1 \S_reg[25]  ( .D(n147), .SI(1'b0), .SE(1'b0), .CLK(clk), .Q(S[25]) );
+  SDFFX1 \S_reg[26]  ( .D(n149), .SI(1'b0), .SE(1'b0), .CLK(clk), .Q(S[26]) );
+  SDFFX1 \S_reg[27]  ( .D(n151), .SI(1'b0), .SE(1'b0), .CLK(clk), .Q(S[27]) );
+  SDFFX1 \S_reg[28]  ( .D(n153), .SI(1'b0), .SE(1'b0), .CLK(clk), .Q(S[28]) );
+  SDFFX1 \S_reg[29]  ( .D(n155), .SI(1'b0), .SE(1'b0), .CLK(clk), .Q(S[29]) );
+  SDFFX1 \S_reg[30]  ( .D(n157), .SI(1'b0), .SE(1'b0), .CLK(clk), .Q(S[30]) );
+  AOINVX2 U94 ( .IN(n92), .QN(n93) );
+  AOINVX2 U95 ( .IN(n94), .QN(n95) );
+  AOINVX2 U96 ( .IN(n96), .QN(n97) );
+  AOINVX2 U97 ( .IN(n98), .QN(n99) );
+  AOINVX2 U98 ( .IN(n100), .QN(n101) );
+  AOINVX2 U99 ( .IN(n102), .QN(n103) );
+  AOINVX2 U100 ( .IN(n104), .QN(n105) );
+  AOINVX2 U101 ( .IN(n106), .QN(n107) );
+  AOINVX2 U102 ( .IN(n108), .QN(n109) );
+  AOINVX2 U103 ( .IN(n110), .QN(n111) );
+  AOINVX2 U104 ( .IN(n112), .QN(n113) );
+  AOINVX2 U105 ( .IN(n114), .QN(n115) );
+  AOINVX2 U106 ( .IN(n116), .QN(n117) );
+  AOINVX2 U107 ( .IN(n118), .QN(n119) );
+  AOINVX2 U108 ( .IN(n120), .QN(n121) );
+  AOINVX2 U109 ( .IN(n122), .QN(n123) );
+  AOINVX2 U110 ( .IN(n124), .QN(n125) );
+  AOINVX2 U111 ( .IN(n126), .QN(n127) );
+  AOINVX2 U112 ( .IN(n128), .QN(n129) );
+  AOINVX2 U113 ( .IN(n130), .QN(n131) );
+  AOINVX2 U114 ( .IN(n132), .QN(n133) );
+  AOINVX2 U115 ( .IN(n134), .QN(n135) );
+  AOINVX2 U116 ( .IN(n136), .QN(n137) );
+  AOINVX2 U117 ( .IN(n138), .QN(n139) );
+  AOINVX2 U118 ( .IN(n140), .QN(n141) );
+  AOINVX2 U119 ( .IN(n142), .QN(n143) );
+  AOINVX2 U120 ( .IN(n144), .QN(n145) );
+  AOINVX2 U121 ( .IN(n146), .QN(n147) );
+  AOINVX2 U122 ( .IN(n148), .QN(n149) );
+  AOINVX2 U123 ( .IN(n150), .QN(n151) );
+  AOINVX2 U124 ( .IN(n152), .QN(n153) );
+  AOINVX2 U125 ( .IN(n154), .QN(n155) );
+  AOINVX2 U126 ( .IN(n156), .QN(n157) );
+endmodule
+
